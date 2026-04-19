@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muhammad Fahad Ali | Freelance Developer & Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #111118;
+      --bg3: #16161f;
+      --accent: #c8a96e;
+      --accent2: #e8c98e;
+      --text: #e8e8f0;
+      --muted: #888899;
+      --border: rgba(200,169,110,0.15);
+      --card: rgba(22,22,31,0.9);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 6%;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.55rem 1.4rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 6% 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(200,169,110,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(200,169,110,0.04) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .hero-label::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    h1 span {
+      color: var(--accent);
+      display: block;
+    }
+
+    .hero-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 440px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.85rem 2rem;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent2);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.85rem 2rem;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 2rem;
+      width: 60px; height: 2px;
+      background: var(--accent);
+    }
+
+    .hero-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card-role {
+      color: var(--accent);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.3rem 0.8rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 1.5rem 0;
+    }
+
+    .hero-available {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* STATS */
+    .stats {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 6%;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* SECTIONS SHARED */
+    section {
+      padding: 6rem 6%;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 3.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* SERVICES */
+    #services { background: var(--bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .service-card {
+      background: var(--bg);
+      padding: 2.5rem;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover { background: var(--bg3); }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: width 0.4s ease;
+    }
+
+    .service-card:hover::after { width: 100%; }
+
+    .service-icon {
+      width: 44px; height: 44px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: var(--text);
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.75;
+    }
+
+    .service-list {
+      margin-top: 1.2rem;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .service-list li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .service-list li::before {
+      content: '';
+      width: 14px; height: 1px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* SKILLS */
+    #skills { background: var(--bg2); }
+
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .skill-item {
+      margin-bottom: 1.8rem;
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+      font-size: 0.85rem;
+    }
+
+    .skill-name { color: var(--text); }
+    .skill-pct { color: var(--accent); }
+
+    .skill-bar {
+      height: 2px;
+      background: rgba(200,169,110,0.12);
+      position: relative;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--accent);
+      position: relative;
+    }
+
+    .skill-fill::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .skills-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .skills-text p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    /* PORTFOLIO */
+    #portfolio { background: var(--bg); }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .portfolio-item {
+      background: var(--bg3);
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .portfolio-item-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--bg3), #1a1a28);
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-item:hover .portfolio-item-bg {
+      transform: scale(1.05);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,15,0.95) 0%, transparent 60%);
+    }
+
+    .portfolio-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .portfolio-cat {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .portfolio-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .portfolio-num {
+      position: absolute;
+      top: 1.2rem; right: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: rgba(200,169,110,0.08);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ABOUT */
+    #about { background: var(--bg2); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-box {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 3rem;
+      position: relative;
+    }
+
+    .about-box::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 2.5rem;
+      width: 50px; height: 2px;
+      background: var(--accent);
+    }
+
+    .about-initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(200,169,110,0.1);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .about-name-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .about-role {
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .highlight-item {
+      border-left: 2px solid var(--accent);
+      padding-left: 1rem;
+    }
+
+    .highlight-title {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .highlight-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+    #contact { background: var(--bg); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-item-icon {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.3s;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group select option {
+      background: var(--bg2);
+    }
+
+    .form-group textarea { height: 120px; }
+
+    /* TESTIMONIALS */
+    #testimonials { background: var(--bg2); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .testimonial-card:hover { border-color: rgba(200,169,110,0.4); }
+
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 1rem;
+      opacity: 0.4;
+    }
+
+    .testimonial-text {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1.2rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .testimonial-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--bg);
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .testimonial-role {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .testimonial-stars {
+      color: var(--accent);
+      font-size: 0.75rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 900px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 2rem 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    .social-links {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.8rem;
+    }
+
+    .social-link {
+      width: 38px; height: 38px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      letter-spacing: 0.03em;
+    }
+
+    .social-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(200,169,110,0.05);
+    }
+
+    /* TYPING ANIMATION */
+    .typing-text { color: var(--accent); }
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      background: var(--accent);
+      animation: blink 0.8s infinite;
+      margin-left: 2px;
+      vertical-align: baseline;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* PROFILE PHOTO */
+    .profile-photo-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+    }
+    .profile-photo-wrap::before {
+      content: '';
+      position: absolute;
+      top: -8px; left: -8px;
+      right: 8px; bottom: 8px;
+      border: 1px solid var(--accent);
+      z-index: 0;
+      opacity: 0.4;
+    }
+    .profile-photo {
+      width: 100%;
+      display: block;
+      position: relative;
+      z-index: 1;
+      filter: grayscale(20%);
+      object-fit: cover;
+    }
+    .profile-badge {
+      position: absolute;
+      bottom: -1rem; right: -1rem;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.7rem 1.2rem;
+      z-index: 2;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* VERIFIED BADGES */
+    .verified-badges {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .verified-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.8rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .verified-badge:hover { border-color: var(--accent); color: var(--accent); }
+    .verified-badge span { color: var(--accent); font-weight: 600; }
+
+    /* WHY WORK WITH ME */
+    #why { background: var(--bg3); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .why-steps { display: flex; flex-direction: column; gap: 2rem; }
+    .why-step { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .why-step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: rgba(200,169,110,0.15);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 50px;
+    }
+    .why-step-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+    .why-step-content p { color: var(--muted); font-size: 0.88rem; line-height: 1.75; }
+    .why-text p { color: var(--muted); font-size: 0.93rem; line-height: 1.85; margin-bottom: 1rem; }
+
+    /* TECH SKILLS */
+    .tech-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+    .tech-skill {
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.2rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      transition: all 0.3s;
+    }
+    .tech-skill:hover { border-color: var(--accent); color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .skills-wrapper,
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; }
+
+      .services-grid,
+      .portfolio-grid { grid-template-columns: 1fr; }
+
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .nav-links { display: none; }
+
+      .about-visual { display: none; }
+
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">FA.</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content fade-up">
+        <div class="hero-label">Freelance Professional</div>
+        <h1>
+          Muhammad<br>Fahad Ali
+          <span><span class="typing-text" id="typing"></span><span class="cursor"></span></span>
+        </h1>
+        <p class="hero-desc">
+          I build high-performance websites, e-commerce stores, and digital experiences that help businesses grow online.
+        </p>
+        <div class="hero-btns">
+          <a href="#portfolio" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-outline">Get in Touch</a>
+        </div>
+        <div class="verified-badges">
+          <a href="https://www.facebook.com/share/1CqqhDvYSg/" target="_blank" class="verified-badge">Verified by <span>Facebook</span></a>
+          <a href="https://www.linkedin.com/in/muhammadfahadali25" target="_blank" class="verified-badge">Verified by <span>LinkedIn</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-up" style="transition-delay:0.2s">
+        <div class="profile-photo-wrap">
+          <img src="profile.png" alt="Muhammad Fahad Ali" class="profile-photo" />
+          <div class="profile-badge">Available for Work</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-grid" style="grid-template-columns:repeat(4,1fr);max-width:1000px;">
+      <div class="fade-up">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.2s">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.3s">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Team Members</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-label">What I Do</div>
+    <h2>My Services</h2>
+    <p class="section-desc">Three core areas where I help businesses build a strong digital presence.</p>
+
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon">&#9633;</div>
+        <h3>Web Development</h3>
+        <p>Custom websites built with clean code, fast load times, and mobile-first design.</p>
+        <ul class="service-list">
+          <li>WordPress Development</li>
+          <li>Custom HTML/CSS/JS Sites</li>
+          <li>Landing Pages</li>
+          <li>Website Maintenance</li>
+          <li>SEO Optimization</li>
+        </ul>
+      </div>
+      <div class="service-card fade-up" style="transition-delay:0.1s">
+        <div class="service-icon">&#9651;</div>
+        <h3>Shopify Development</h3>
+        <p>End-to-end Shopify solutions, from building a new store to fixing an existing one.</p>
+        <ul class="service-list">
+          <li>Store Build or Redesign</li>
+          <li>Theme Customization</li>
+          <li>Custom App Integrations</li>
+          <li>Product &amp; Collection Setup</li>
+          <li>Website Audit &amp; Optimization</li>
+          <li>Troubleshooting &amp; Bug Fixes</li>
+        </ul>
+      </div>
+      <div class="service-card fade-up" style="transition-delay:0.2s">
+        <div class="service-icon">&#9671;</div>
+        <h3>Graphic Design</h3>
+        <p>Visual design that strengthens your brand and communicates clearly.</p>
+        <ul class="service-list">
+          <li>Logo Design</li>
+          <li>Brand Identity</li>
+          <li>Social Media Graphics</li>
+          <li>Marketing Materials</li>
+          <li>UI Design</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Shopify detail cards -->
+    <div style="margin-top:3rem;">
+      <div class="section-label" style="margin-bottom:1.2rem;">Shopify Services in Detail</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);">
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Store Build or Redesign</h3>
+          <p>Set up a new Shopify store or redesign an existing one. Options range from basic theme setup to fully custom solutions built around your brand.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.05s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Theme Customization</h3>
+          <p>Create custom pages and forms to personalize how customers discover and purchase your products.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.1s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Custom App Integrations</h3>
+          <p>Add features and functionality to your store that require custom code, a custom-built app, or connecting to other systems.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.15s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Product &amp; Collection Setup</h3>
+          <p>Set up your products with images and descriptions, or offer custom options like subscriptions and gift cards.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.2s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Website Audit &amp; Optimization</h3>
+          <p>Improve your store's overall performance with a comprehensive audit covering speed, UX, SEO, and conversion rate.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.25s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Troubleshooting</h3>
+          <p>Resolve any errors or issues in your store quickly, so your customers never hit a broken page or checkout problem.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Web Development detail cards -->
+    <div style="margin-top:3rem;">
+      <div class="section-label" style="margin-bottom:1.2rem;">Web Development Services in Detail</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);">
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Custom Website Development</h3>
+          <p>Build a fully custom website from scratch using HTML, CSS, and JavaScript, tailored to your brand and business goals.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.05s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">WordPress Development</h3>
+          <p>Design and develop WordPress websites including custom themes, plugins, and WooCommerce stores that are fast and easy to manage.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.1s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Landing Page Design</h3>
+          <p>Create high-converting landing pages for products, services, or campaigns, optimized for both desktop and mobile.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.15s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Website Redesign</h3>
+          <p>Refresh an outdated website with a modern design, improved structure, and better performance without losing your existing content.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.2s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">SEO Optimization</h3>
+          <p>Improve your site's search engine rankings through on-page SEO, speed optimization, meta tags, and clean site structure.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.25s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Website Maintenance &amp; Support</h3>
+          <p>Keep your website running smoothly with regular updates, security checks, backups, and technical support whenever you need it.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Graphic Design detail cards -->
+    <div style="margin-top:3rem;">
+      <div class="section-label" style="margin-bottom:1.2rem;">Graphic Design Services in Detail</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);">
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Logo Design</h3>
+          <p>Design a unique, memorable logo that represents your brand. Delivered in all formats including PNG, SVG, and PDF.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.05s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Brand Identity</h3>
+          <p>Build a complete brand identity including logo, color palette, typography, and usage guidelines to keep your brand consistent everywhere.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.1s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Social Media Graphics</h3>
+          <p>Design eye-catching posts, banners, and story templates for Instagram, Facebook, and LinkedIn that match your brand style.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.15s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Marketing Materials</h3>
+          <p>Create professional flyers, brochures, business cards, and banners for both print and digital use.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.2s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">UI Design</h3>
+          <p>Design clean, user-friendly interfaces for websites and apps with a focus on layout, usability, and visual consistency.</p>
+        </div>
+
+        <div class="service-card fade-up" style="border-top:2px solid var(--accent);transition-delay:0.25s">
+          <h3 style="font-size:1rem;margin-bottom:0.6rem;">Thumbnail &amp; Cover Design</h3>
+          <p>Design scroll-stopping YouTube thumbnails, blog covers, and product images that drive more clicks and engagement.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="skills-wrapper">
+      <div>
+        <div class="section-label">Technical Skills</div>
+        <h2>My Expertise</h2>
+
+        <div class="skill-item fade-up">
+          <div class="skill-header">
+            <span class="skill-name">WordPress</span>
+            <span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+
+        <div class="skill-item fade-up" style="transition-delay:0.1s">
+          <div class="skill-header">
+            <span class="skill-name">Shopify</span>
+            <span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+
+        <div class="skill-item fade-up" style="transition-delay:0.15s">
+          <div class="skill-header">
+            <span class="skill-name">HTML / CSS / JS</span>
+            <span class="skill-pct">88%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+        </div>
+
+        <div class="skill-item fade-up" style="transition-delay:0.2s">
+          <div class="skill-header">
+            <span class="skill-name">Graphic Design</span>
+            <span class="skill-pct">82%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+        </div>
+
+        <div class="skill-item fade-up" style="transition-delay:0.25s">
+          <div class="skill-header">
+            <span class="skill-name">E-Commerce Strategy</span>
+            <span class="skill-pct">87%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width:87%"></div></div>
+        </div>
+      </div>
+
+      <div class="skills-text fade-up">
+        <h3>Built for Real Business Results</h3>
+        <p>
+          Every project I take on is focused on one thing: delivering results that matter to your business. I combine technical skills with a strong understanding of what makes websites convert.
+        </p>
+        <p>
+          Whether you need a new WordPress site, a Shopify store, or a complete brand identity, I bring the same level of attention and professionalism to every job.
+        </p>
+        <div class="tech-skills">
+          <span class="tech-skill">WordPress</span>
+          <span class="tech-skill">Shopify</span>
+          <span class="tech-skill">HTML5</span>
+          <span class="tech-skill">CSS3</span>
+          <span class="tech-skill">JavaScript</span>
+          <span class="tech-skill">WooCommerce</span>
+          <span class="tech-skill">Figma</span>
+          <span class="tech-skill">Photoshop</span>
+          <span class="tech-skill">Illustrator</span>
+        </div>
+        <div class="about-highlights" style="margin-top:1.5rem">
+          <div class="highlight-item">
+            <div class="highlight-title">Delivery</div>
+            <div class="highlight-text">On time, every time</div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-title">Support</div>
+            <div class="highlight-text">Post-launch assistance</div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-title">Quality</div>
+            <div class="highlight-text">Clean, maintainable work</div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-title">Communication</div>
+            <div class="highlight-text">Clear and transparent</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="section-label">My Work</div>
+    <h2>Selected Projects</h2>
+    <p class="section-desc">A sample of recent work across web development, e-commerce, and design.</p>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item fade-up">
+        <div class="portfolio-item-bg" style="background:linear-gradient(135deg,#0f1a2e,#1a2a3e)"></div>
+        <div class="portfolio-overlay"></div>
+        <div class="portfolio-num">01</div>
+        <div class="portfolio-content">
+          <div class="portfolio-cat">Shopify</div>
+          <div class="portfolio-title">Fashion E-Commerce Store</div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up" style="transition-delay:0.05s">
+        <div class="portfolio-item-bg" style="background:linear-gradient(135deg,#1a0f2e,#2a1a3e)"></div>
+        <div class="portfolio-overlay"></div>
+        <div class="portfolio-num">02</div>
+        <div class="portfolio-content">
+          <div class="portfolio-cat">WordPress</div>
+          <div class="portfolio-title">Business Portfolio Site</div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up" style="transition-delay:0.1s">
+        <div class="portfolio-item-bg" style="background:linear-gradient(135deg,#0f2e1a,#1a3e2a)"></div>
+        <div class="portfolio-overlay"></div>
+        <div class="portfolio-num">03</div>
+        <div class="portfolio-content">
+          <div class="portfolio-cat">Graphic Design</div>
+          <div class="portfolio-title">Brand Identity Package</div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up" style="transition-delay:0.15s">
+        <div class="portfolio-item-bg" style="background:linear-gradient(135deg,#2e1a0f,#3e2a1a)"></div>
+        <div class="portfolio-overlay"></div>
+        <div class="portfolio-num">04</div>
+        <div class="portfolio-content">
+          <div class="portfolio-cat">WooCommerce</div>
+          <div class="portfolio-title">Online Electronics Shop</div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up" style="transition-delay:0.2s">
+        <div class="portfolio-item-bg" style="background:linear-gradient(135deg,#0f2e2e,#1a3e3e)"></div>
+        <div class="portfolio-overlay"></div>
+        <div class="portfolio-num">05</div>
+        <div class="portfolio-content">
+          <div class="portfolio-cat">Web Development</div>
+          <div class="portfolio-title">Restaurant Landing Page</div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up" style="transition-delay:0.25s">
+        <div class="portfolio-item-bg" style="background:linear-gradient(135deg,#1a0f0f,#2e1a1a)"></div>
+        <div class="portfolio-overlay"></div>
+        <div class="portfolio-num">06</div>
+        <div class="portfolio-content">
+          <div class="portfolio-cat">Graphic Design</div>
+          <div class="portfolio-title">Social Media Campaign</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-visual fade-up">
+        <div class="about-box">
+          <div class="about-initials">FA</div>
+          <div class="about-name-big">Muhammad Fahad Ali</div>
+          <div class="about-role">Freelance Developer & Designer</div>
+          <div class="hero-divider"></div>
+          <div class="hero-available">
+            <span class="dot"></span>
+            Open to new projects
+          </div>
+        </div>
+      </div>
+      <div class="about-text fade-up" style="transition-delay:0.15s">
+        <div class="section-label">About Me</div>
+        <h2>Who I Am</h2>
+        <p>
+          I'm Muhammad Fahad Ali, a freelance web developer, e-commerce specialist, and graphic designer. I work with businesses of all sizes to build digital solutions that actually perform.
+        </p>
+        <p>
+          My work covers the full picture: from designing a brand identity to building and launching a complete Shopify or WordPress store. I focus on clean execution, clear communication, and results you can measure.
+        </p>
+        <p>
+          With 5+ years of experience and 200+ projects delivered, I bring both the technical skill and the business understanding needed to help your project succeed.
+        </p>
+        <div class="about-highlights" style="margin-top:2rem">
+          <div class="highlight-item">
+            <div class="highlight-title">Specialty</div>
+            <div class="highlight-text">WordPress &amp; Shopify</div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-title">Design</div>
+            <div class="highlight-text">Branding &amp; UI</div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-title">Focus</div>
+            <div class="highlight-text">Business Growth</div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-title">Availability</div>
+            <div class="highlight-text">Open for work</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="section-label">Client Reviews</div>
+    <h2>What Clients Say</h2>
+    <p class="section-desc">Real feedback from people I've worked with.</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">Fahad built our Shopify store from scratch and delivered everything on time. The store looks professional and our conversion rate improved right away.</p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AK</div>
+          <div>
+            <div class="testimonial-name">Ahmed Khan</div>
+            <div class="testimonial-role">E-Commerce Business Owner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up" style="transition-delay:0.1s">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">Great communication throughout the project. He redesigned our WordPress site and the results were exactly what we wanted. Will work with him again.</p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SR</div>
+          <div>
+            <div class="testimonial-name">Sara Rashid</div>
+            <div class="testimonial-role">Marketing Manager</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up" style="transition-delay:0.2s">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">Fahad handled our brand identity and social media graphics. Clean, modern work. He understood our vision and delivered beyond expectations.</p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">OM</div>
+          <div>
+            <div class="testimonial-name">Omar Malik</div>
+            <div class="testimonial-role">Startup Founder</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up" style="transition-delay:0.05s">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">Fast turnaround and solid work. Our WooCommerce store was set up and running in less than a week. Very responsive and easy to work with.</p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">FN</div>
+          <div>
+            <div class="testimonial-name">Fatima Noor</div>
+            <div class="testimonial-role">Online Retailer</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up" style="transition-delay:0.15s">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">I needed a landing page quickly for a product launch. Fahad delivered a clean, fast-loading page that looked great on mobile too. Highly recommend.</p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ZA</div>
+          <div>
+            <div class="testimonial-name">Zain Ahmed</div>
+            <div class="testimonial-role">Product Manager</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up" style="transition-delay:0.25s">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">Professional, skilled, and reliable. The logo and branding package Fahad created gave our company a completely fresh look. Clients noticed immediately.</p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">HB</div>
+          <div>
+            <div class="testimonial-name">Hina Baig</div>
+            <div class="testimonial-role">Business Owner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY WORK WITH ME -->
+  <section id="why">
+    <div class="why-grid">
+      <div class="why-text fade-up">
+        <div class="section-label">Why Choose Me</div>
+        <h2>Why Work With Me?</h2>
+        <p>I don't just build websites. I help businesses grow online with the right strategy, clean execution, and ongoing support.</p>
+        <p>Every project goes through a clear process: understand your goals, design with your customers in mind, build with quality code, and deliver on time.</p>
+        <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:1.5rem;">Start a Project</a>
+      </div>
+      <div class="why-steps fade-up" style="transition-delay:0.15s">
+        <div class="why-step">
+          <div class="why-step-num">01</div>
+          <div class="why-step-content">
+            <h3>Design</h3>
+            <p>Every project starts with strategy. I create intuitive, user-friendly designs that align with your brand and keep visitors engaged.</p>
+          </div>
+        </div>
+        <div class="why-step">
+          <div class="why-step-num">02</div>
+          <div class="why-step-content">
+            <h3>Develop</h3>
+            <p>Using modern technologies, I build responsive, fast, and scalable websites. Whether it's a custom-coded solution or a CMS platform.</p>
+          </div>
+        </div>
+        <div class="why-step">
+          <div class="why-step-num">03</div>
+          <div class="why-step-content">
+            <h3>Deliver</h3>
+            <p>From testing to deployment and post-launch support, I make sure the transition is smooth and your site runs perfectly from day one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <div class="section-label">Get in Touch</div>
+        <h2>Let's Work Together</h2>
+        <p>Have a project in mind? Send me a message and I'll get back to you within 24 hours.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">@</div>
+            <a href="mailto:Muhammadfahadali.020@gmail.com" style="color:var(--muted);text-decoration:none;">Muhammadfahadali.020@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">&#9742;</div>
+            <a href="tel:+923274411221" style="color:var(--muted);text-decoration:none;">+92 327 4411221</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">&#9679;</div>
+            <span>Available Mon–Sat, 9am–7pm PKT</span>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1CqqhDvYSg/" target="_blank" class="social-link" title="Facebook">fb</a>
+          <a href="https://www.instagram.com/fahad_ali.61?igsh=MWY2amF6YWczN3N6dQ==" target="_blank" class="social-link" title="Instagram">ig</a>
+          <a href="https://www.linkedin.com/in/muhammadfahadali25?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-link" title="LinkedIn">in</a>
+          <a href="https://github.com/mfa-muhammadfahadali" target="_blank" class="social-link" title="GitHub">gh</a>
+        </div>
+      </div>
+
+      <div class="contact-form fade-up" style="transition-delay:0.15s">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="John Smith" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="john@email.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select>
+            <option value="">Select a service</option>
+            <option>Web Development</option>
+            <option>E-Commerce (Shopify)</option>
+            <option>E-Commerce (WooCommerce)</option>
+            <option>Graphic Design</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button class="btn-primary" style="border:none;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:0.08em;">Send Message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">FA.</div>
+    <span class="footer-copy">© 2026 Muhammad Fahad Ali. All rights reserved.</span>
+    <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+      <div style="display:flex;gap:0.6rem;">
+        <a href="https://www.facebook.com/share/1CqqhDvYSg/" target="_blank" class="social-link" title="Facebook">fb</a>
+        <a href="https://www.instagram.com/fahad_ali.61?igsh=MWY2amF6YWczN3N6dQ==" target="_blank" class="social-link" title="Instagram">ig</a>
+        <a href="https://www.linkedin.com/in/muhammadfahadali25?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-link" title="LinkedIn">in</a>
+        <a href="https://github.com/mfa-muhammadfahadali" target="_blank" class="social-link" title="GitHub">gh</a>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Typing animation
+    const roles = ['WordPress Developer', 'Shopify Developer', 'Graphic Designer', 'Web Developer'];
+    let roleIndex = 0, charIndex = 0, deleting = false;
+    const typingEl = document.getElementById('typing');
+    function type() {
+      const current = roles[roleIndex];
+      if (!deleting) {
+        typingEl.textContent = current.slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) { deleting = true; setTimeout(type, 1800); return; }
+      } else {
+        typingEl.textContent = current.slice(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) { deleting = false; roleIndex = (roleIndex + 1) % roles.length; }
+      }
+      setTimeout(type, deleting ? 60 : 100);
+    }
+    type();
+
+    // Fade-up on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Skill bar animation
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const fills = e.target.querySelectorAll('.skill-fill');
+          fills.forEach(f => {
+            const w = f.style.width;
+            f.style.width = '0';
+            setTimeout(() => {
+              f.style.transition = 'width 1.2s ease';
+              f.style.width = w;
+            }, 200);
+          });
+          skillObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const skillsSection = document.querySelector('#skills');
+    if (skillsSection) skillObserver.observe(skillsSection);
+
+    // Nav active state
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.background = 'rgba(10,10,15,0.97)';
+      } else {
+        nav.style.background = 'rgba(10,10,15,0.85)';
+      }
+    });
+  </script>
+</body>
+</html>
