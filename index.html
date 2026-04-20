@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Muhammad Fahad Ali - Web Developer, Shopify Expert & Graphic Designer" name="description"/>
+  <title>Muhammad Fahad Ali | Web Developer & Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <style>
+    
+    @font-face {
+      font-family: 'ElegantIcons';
+      src: url('fonts/ElegantIcons.eot');
+      src: url('fonts/ElegantIcons.eot?#iefix') format('embedded-opentype'),
+           url('fonts/ElegantIcons.woff') format('woff'),
+           url('fonts/ElegantIcons.ttf') format('truetype'),
+           url('fonts/ElegantIcons.svg#ElegantIcons') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .ei {
+      font-family: 'ElegantIcons' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 1.1em;
+    }
+
+    :root{--bg:#060610;--bg2:#0d0d1a;--bg3:#111122;--accent:#44c5e5;--accent2:#6ec8c9;--text:#e8e8f0;--muted:#8888aa;--border:rgba(68,197,229,0.15);--grad:linear-gradient(90deg,#44c5e5,#6ec8c9)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+    ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent)}
+    #particles-js{position:absolute;inset:0;z-index:0;pointer-events:none}
+    .circles{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;list-style:none;pointer-events:none;z-index:0}
+    .circles li{position:absolute;display:block;background:rgba(68,197,229,.05);border:1px solid rgba(68,197,229,.08);animation:float-up 25s linear infinite;bottom:-150px}
+    .circles li:nth-child(1){left:25%;width:80px;height:80px;animation-delay:0s;animation-duration:20s}
+    .circles li:nth-child(2){left:10%;width:20px;height:20px;animation-delay:2s;animation-duration:25s}
+    .circles li:nth-child(3){left:70%;width:20px;height:20px;animation-delay:4s;animation-duration:18s}
+    .circles li:nth-child(4){left:40%;width:60px;height:60px;animation-delay:0s;animation-duration:22s}
+    .circles li:nth-child(5){left:65%;width:20px;height:20px;animation-delay:0s;animation-duration:20s}
+    .circles li:nth-child(6){left:75%;width:110px;height:110px;animation-delay:3s;animation-duration:28s}
+    .circles li:nth-child(7){left:35%;width:150px;height:150px;animation-delay:7s;animation-duration:30s}
+    .circles li:nth-child(8){left:50%;width:25px;height:25px;animation-delay:15s;animation-duration:22s}
+    .circles li:nth-child(9){left:20%;width:15px;height:15px;animation-delay:2s;animation-duration:24s}
+    .circles li:nth-child(10){left:85%;width:150px;height:150px;animation-delay:0s;animation-duration:32s}
+    @keyframes float-up{0%{transform:translateY(0) rotate(0deg);opacity:.8}100%{transform:translateY(-1200px) rotate(720deg);opacity:0}}
+    .grad-head{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    /* NAV */
+    header{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.2rem 6%;display:flex;justify-content:space-between;align-items:center;background:rgba(6,6,16,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .3s}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+    #mainmenu{display:flex;gap:2rem;list-style:none}
+    #mainmenu a{color:var(--muted);text-decoration:none;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;transition:color .3s;position:relative;padding-bottom:4px}
+    #mainmenu a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .3s}
+    #mainmenu a:hover{color:var(--accent)}#mainmenu a:hover::after{width:100%}
+    .nav-btn{border:1px solid var(--accent);color:var(--accent);padding:.5rem 1.4rem;text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}
+    .nav-btn:hover{background:var(--accent);color:var(--bg)}
+    /* HERO */
+    #section-main{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:8rem 6% 4rem;background:radial-gradient(ellipse at 70% 50%,rgba(68,197,229,.04) 0%,transparent 60%)}
+    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2}
+    .sub-text{font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+    .typed-words{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.5rem);font-weight:700;line-height:1.3;color:var(--text);margin-bottom:2rem}
+    .typed-cursor{display:inline-block;width:2px;height:.9em;background:var(--accent);margin-left:3px;animation:blink .8s infinite;vertical-align:middle}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+    .verified-main-icon{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+    .verified-main-icon a{display:flex;align-items:center;gap:.5rem;color:var(--muted);text-decoration:none;font-size:.82rem;transition:color .3s}
+    .verified-main-icon a:hover{color:var(--accent)}
+    .verified-main-icon i{color:var(--accent);font-size:1.1rem}
+    .verified-main-icon strong{color:var(--text)}
+    .social-main{display:flex;gap:.8rem;margin-bottom:2rem}
+    .social-main a{width:38px;height:38px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;transition:all .3s;font-size:.9rem}
+    .social-main a:hover{border-color:var(--accent);color:var(--accent);background:rgba(68,197,229,.05)}
+    .count-home-cover{display:flex;gap:1rem;flex-wrap:wrap}
+    .count-home{text-align:center;padding:1rem 1.2rem;border:1px solid var(--border);background:rgba(68,197,229,.03);min-width:90px}
+    .count-home h4{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.3rem}
+    .count-home p{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .hero-right{display:flex;flex-direction:column;align-items:center}
+    .profile-frame{position:relative;width:320px;max-width:100%}
+    .profile-frame::before{content:'';position:absolute;top:-10px;left:-10px;right:10px;bottom:10px;border:1px solid rgba(68,197,229,.3);z-index:0}
+    .profile-frame::after{content:'';position:absolute;top:10px;left:10px;right:-10px;bottom:-10px;border:1px solid rgba(68,197,229,.1);z-index:0}
+    .profile-frame img{width:100%;display:block;position:relative;z-index:1}
+    .available-badge{position:absolute;bottom:-1.2rem;right:-1rem;background:var(--accent);color:var(--bg);padding:.6rem 1.2rem;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;z-index:2;display:flex;align-items:center;gap:.4rem}
+    .avail-dot{width:7px;height:7px;border-radius:50%;background:var(--bg);animation:pdot 2s infinite}
+    @keyframes pdot{0%,100%{opacity:1}50%{opacity:.3}}
+    /* TRUST BAR */
+    .trust-bar{background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.4rem 6%}
+    .trust-bar-inner{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+    .trust-item{font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.4rem}
+    .trust-item strong{color:var(--accent)}
+    .trust-stars{color:#facc15;font-size:.85rem;letter-spacing:2px}
+    /* SECTIONS */
+    section{padding:6rem 6%;position:relative}
+    .section-subtitle{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;color:var(--text)}
+    .section-desc{color:var(--muted);max-width:520px;margin-top:.8rem;font-size:.92rem}
+    .section-header{margin-bottom:3rem}
+    /* TESTIMONIALS */
+    #section-testimonials{background:var(--bg2);overflow:hidden}
+    .video-container{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem}
+    .thumbnail{aspect-ratio:16/10;overflow:hidden;cursor:pointer;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:border-color .3s}
+    .thumbnail:hover{border-color:var(--accent)}
+    .thumb-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;background:linear-gradient(135deg,var(--bg3),var(--bg2))}
+    .thumb-play{width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;transition:all .3s}
+    .thumbnail:hover .thumb-play{background:var(--accent);color:var(--bg)}
+    .thumb-name{font-size:.8rem;color:var(--muted)}.thumb-stars{color:#facc15;font-size:.7rem}
+    .feedback-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:4rem}
+    .client-scroll-wrap{display:flex;gap:1rem;overflow:hidden;height:300px}
+    .client-scroll{display:flex;flex-direction:column;gap:.8rem;animation:scr-up 12s linear infinite}
+    .client-scroll:nth-child(2){animation:scr-dn 14s linear infinite}
+    @keyframes scr-up{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+    @keyframes scr-dn{0%{transform:translateY(-50%)}100%{transform:translateY(0)}}
+    .client-avatar{width:80px;height:80px;border-radius:4px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--accent);flex-shrink:0}
+    .feedback-text h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1.2rem}
+    .check-item{display:flex;gap:1rem;margin-bottom:1.2rem;align-items:flex-start}
+    .check-icon{color:var(--accent);font-size:1.2rem;margin-top:2px;flex-shrink:0}
+    .check-item p{color:var(--muted);font-size:.9rem;line-height:1.7}
+    .check-item strong{color:var(--text)}
+    .written-reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
+    .review-card{background:var(--bg3);border:1px solid var(--border);padding:1.5rem;transition:border-color .3s;position:relative}
+    .review-card:hover{border-color:var(--accent)}
+    .review-card::before{content:'"';font-family:'Playfair Display',serif;font-size:3rem;color:rgba(68,197,229,.12);position:absolute;top:.5rem;right:1rem;line-height:1}
+    .review-stars{color:#facc15;font-size:.75rem;margin-bottom:.8rem}
+    .review-text{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:1.2rem}
+    .review-divider{height:1px;background:var(--border);margin-bottom:1rem}
+    .review-author{display:flex;align-items:center;gap:.8rem}
+    .review-avatar{width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--bg);flex-shrink:0}
+    .review-name{font-size:.85rem;font-weight:500;color:var(--text)}.review-role{font-size:.72rem;color:var(--muted)}
+    /* ABOUT */
+    #section-about{background:var(--bg)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .about-img-wrap img{width:100%;border:1px solid var(--border);display:block}
+    .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+    .about-stat{background:var(--bg3);border:1px solid var(--border);border-top:2px solid var(--accent);padding:1.2rem}
+    .about-stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .about-stat-label{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+    .about-text h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
+    .about-text p{color:var(--muted);font-size:.92rem;line-height:1.85;margin-bottom:1rem}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:4rem}
+    .process-card{background:var(--bg3);border:1px solid var(--border);padding:1.8rem;transition:border-color .3s,transform .3s}
+    .process-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+    .process-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:rgba(68,197,229,.1);line-height:1;margin-bottom:.8rem}
+    .process-card h4{font-size:1rem;margin-bottom:.5rem;color:var(--text)}
+    .process-card p{font-size:.83rem;color:var(--muted);line-height:1.7}
+    /* CERTIFICATIONS */
+    #section-certs{background:var(--bg2)}
+    .certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .cert-card{background:var(--bg3);border:1px solid var(--border);padding:1.5rem;transition:border-color .3s,transform .3s;position:relative;overflow:hidden}
+    .cert-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+    .cert-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--grad)}
+    .cert-icon{width:44px;height:44px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;margin-bottom:1rem}
+    .cert-title{font-size:.95rem;font-weight:500;color:var(--text);margin-bottom:.3rem}
+    .cert-platform{font-size:.78rem;color:var(--accent);letter-spacing:.06em;margin-bottom:.5rem}
+    .cert-year{font-size:.75rem;color:var(--muted)}
+    /* SKILLS */
+    #section-skills{background:var(--bg)}
+    .skills-main{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .skills-left h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem}
+    .skills-left p{color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:2rem}
+    .skill-item{margin-bottom:1.5rem}
+    .skill-header{display:flex;justify-content:space-between;margin-bottom:.5rem;font-size:.85rem}
+    .skill-name{color:var(--text)}.skill-pct{color:var(--accent)}
+    .skill-bar{height:2px;background:rgba(68,197,229,.1)}
+    .skill-fill{height:100%;background:var(--grad);position:relative;transition:width 1.2s ease}
+    .skill-fill::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--accent)}
+    .tech-tags{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
+    .tech-tag{border:1px solid var(--border);padding:.4rem 1rem;font-size:.78rem;color:var(--muted);letter-spacing:.06em;transition:all .3s;cursor:default;display:flex;align-items:center;gap:.5rem}
+    .tech-tag:hover{border-color:var(--accent);color:var(--accent)}
+    .tech-tag img{flex-shrink:0;opacity:.7;transition:opacity .3s}
+    .tech-tag:hover img{opacity:1}
+    /* SERVICES */
+    #section-services{background:var(--bg2)}
+    .service-category{margin-bottom:5rem}
+    .service-cat-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:3rem}
+    .service-cat-img{background:var(--bg3);border:1px solid var(--border);padding:4rem 3rem;text-align:center}
+    .service-cat-img i{font-size:5rem;color:var(--accent);opacity:.5}
+    .service-cat-img p{margin-top:1.5rem;font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--muted)}
+    .service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+    .service-card{background:var(--bg2);padding:2rem;transition:background .3s;position:relative;overflow:hidden}
+    .service-card:hover{background:var(--bg3)}
+    .service-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--grad);transition:width .4s ease}
+    .service-card:hover::after{width:100%}
+    .svc-icon{width:44px;height:44px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;margin-bottom:1.2rem}
+    .service-card h4{font-size:.95rem;margin-bottom:.6rem;color:var(--text)}
+    .service-card p{font-size:.83rem;color:var(--muted);line-height:1.7}
+    /* PORTFOLIO */
+    #section-portfolio{background:var(--bg)}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .p-item{background:var(--bg3);border:1px solid var(--border);padding:1.8rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+    .p-item:hover{border-color:var(--accent);transform:translateY(-3px)}
+    .p-item::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--grad)}
+    .p-cat{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+    .p-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);margin-bottom:.8rem}
+    .p-desc{font-size:.83rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem}
+    .p-tags{display:flex;gap:.5rem;flex-wrap:wrap}
+    .p-tag{background:rgba(68,197,229,.07);border:1px solid var(--border);padding:.3rem .7rem;font-size:.73rem;color:var(--accent)}
+    .p-num{position:absolute;top:1rem;right:1.2rem;font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:rgba(68,197,229,.05);line-height:1}
+    /* WHY */
+    #section-why{background:var(--bg2)}
+    .expertise-showcase{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    .expertise-content h4{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+    .expertise-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:2rem;line-height:1.2}
+    .expertise-content img{width:100%;border:1px solid var(--border);display:block;margin-top:2rem}
+    .exp-detail{display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:2rem}
+    .exp-detail-left{display:flex;flex-direction:column;align-items:center}
+    .exp-icon{width:48px;height:48px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;flex-shrink:0}
+    .exp-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--accent),transparent);margin-top:.5rem}
+    .exp-title{font-family:'Playfair Display',serif;font-size:1.1rem;text-transform:capitalize;margin-bottom:.4rem;color:var(--text)}
+    .exp-text{font-size:.87rem;color:var(--muted);line-height:1.75}
+    /* CONTACT */
+    .contact-cta{background:var(--bg);border-top:1px solid var(--border);padding:5rem 6%;text-align:center}
+    .contact-cta p{color:var(--muted);max-width:680px;margin:0 auto 1.5rem;font-size:.95rem;line-height:1.8}
+    .contact-cta p span{color:var(--text)}
+    .cta-headline{font-size:1.2rem;color:var(--accent);margin-bottom:1.5rem;font-weight:500}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:transparent;border:1px solid var(--accent);color:var(--accent);padding:.85rem 2rem;text-decoration:none;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .3s}
+    .btn-primary:hover{background:var(--accent);color:var(--bg)}
+    .btn-solid{background:var(--accent);color:var(--bg)}
+    .btn-solid:hover{background:transparent;color:var(--accent)}
+    .social-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+    .social-cta a{width:44px;height:44px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:1rem;transition:all .3s}
+    .social-cta a:hover{border-color:var(--accent);color:var(--accent)}
+    /* MODAL */
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;align-items:center;justify-content:center}
+    .modal-overlay.active{display:flex}
+    .modal-box{background:var(--bg2);border:1px solid var(--border);padding:2rem;max-width:680px;width:90%;position:relative}
+    .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;transition:color .3s}
+    .modal-close:hover{color:var(--accent)}
+    /* FOOTER */
+    footer{background:var(--bg3);border-top:1px solid var(--border);padding:2rem 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .footer-copy{font-size:.78rem;color:var(--muted)}
+    .footer-links{display:flex;gap:1.5rem;list-style:none}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:.78rem;transition:color .3s}
+    .footer-links a:hover{color:var(--accent)}
+    .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:900px){
+      .hero-inner,.about-grid,.expertise-showcase,.skills-main,.feedback-grid,.service-cat-header{grid-template-columns:1fr}
+      .video-container,.written-reviews,.service-cards,.portfolio-grid,.process-grid,.certs-grid{grid-template-columns:1fr}
+      #mainmenu{display:none}.about-img-wrap{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="nav-logo">FA.</a>
+  <ul id="mainmenu">
+    <li><a href="#section-about">About Me</a></li>
+    <li><a href="#section-services">Services</a></li>
+    <li><a href="#section-portfolio">Portfolio</a></li>
+    <li><a href="#section-testimonials">Testimonials</a></li>
+    <li><a href="#section-contact">Contact</a></li>
+  </ul>
+  <a href="mailto:Muhammadfahadali.020@gmail.com" class="nav-btn">Hire Me</a>
+</header>
+
+<!-- HERO -->
+<section id="section-main">
+  <div id="particles-js"></div>
+  <div class="hero-inner">
+    <div class="fade-up">
+      <p class="sub-text">Taking Brands to New Heights with</p>
+      <div class="typed-words">
+        Revenue-Generating Websites as a<br>
+        <span class="grad-head" id="typed-output"></span><span class="typed-cursor"></span>
+      </div>
+      <div class="verified-main-icon">
+        <a href="https://www.facebook.com/share/1CqqhDvYSg/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg><span>Verified by <strong>Facebook</strong></span>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammadfahadali25" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg><span>Verified by <strong>LinkedIn</strong></span>
+        </a>
+      </div>
+      <div class="social-main">
+        <a href="https://www.linkedin.com/in/muhammadfahadali25" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+        <a href="https://www.facebook.com/share/1CqqhDvYSg/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://github.com/mfa-muhammadfahadali" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        <a href="https://www.instagram.com/fahad_ali.61" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="mailto:Muhammadfahadali.020@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+      </div>
+      <div class="count-home-cover">
+        <div class="count-home"><h4>150+</h4><p>Satisfied Clients</p></div>
+        <div class="count-home"><h4>200+</h4><p>Projects Delivered</p></div>
+        <div class="count-home"><h4>5+</h4><p>Years Experience</p></div>
+        <div class="count-home"><h4>5+</h4><p>Team Members</p></div>
+      </div>
+    </div>
+    <div class="hero-right fade-up" style="transition-delay:.2s">
+      <div class="profile-frame">
+        <img src="profile.png" alt="Muhammad Fahad Ali"/>
+        <div class="available-badge"><span class="avail-dot"></span>Available for Work</div>
+      </div>
+    </div>
+  </div>
+  <ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">Trusted &amp; Used By</div>
+    <div class="trust-item"><strong>Shopify</strong>&nbsp;Partners</div>
+    <div class="trust-item"><strong>WordPress</strong>&nbsp;Experts</div>
+    <div class="trust-item"><strong>Fiverr</strong>&nbsp;Verified Seller</div>
+    <div class="trust-item"><strong>Upwork</strong>&nbsp;Freelancer</div>
+    <div class="trust-item"><span class="trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp;5.0 Avg Rating</div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section id="section-testimonials">
+  <div class="section-header fade-up">
+    <p class="section-subtitle">Reviews</p>
+    <h2 class="section-title">Testimonials</h2>
+  </div>
+  <div class="video-container fade-up">
+    <div class="thumbnail" onclick="openVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')"><div class="thumb-placeholder"><div class="thumb-play"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="thumb-name">Ahmed Khan</div><div class="thumb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+    <div class="thumbnail" onclick="openVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')"><div class="thumb-placeholder"><div class="thumb-play"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="thumb-name">Sara Rashid</div><div class="thumb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+    <div class="thumbnail" onclick="openVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')"><div class="thumb-placeholder"><div class="thumb-play"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="thumb-name">Omar Malik</div><div class="thumb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+  </div>
+  <div class="video-container fade-up" style="transition-delay:.1s">
+    <div class="thumbnail" onclick="openVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')"><div class="thumb-placeholder"><div class="thumb-play"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="thumb-name">Fatima Noor</div><div class="thumb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+    <div class="thumbnail" onclick="openVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')"><div class="thumb-placeholder"><div class="thumb-play"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="thumb-name">Zain Ahmed</div><div class="thumb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+    <div class="thumbnail" onclick="openVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')"><div class="thumb-placeholder"><div class="thumb-play"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="thumb-name">Hina Baig</div><div class="thumb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+  </div>
+  <div class="feedback-grid fade-up">
+    <div class="client-scroll-wrap">
+      <div class="client-scroll">
+        <div class="client-avatar">AK</div><div class="client-avatar">SR</div><div class="client-avatar">OM</div><div class="client-avatar">FN</div><div class="client-avatar">ZA</div><div class="client-avatar">HB</div>
+        <div class="client-avatar">AK</div><div class="client-avatar">SR</div><div class="client-avatar">OM</div><div class="client-avatar">FN</div><div class="client-avatar">ZA</div><div class="client-avatar">HB</div>
+      </div>
+      <div class="client-scroll">
+        <div class="client-avatar">MF</div><div class="client-avatar">RK</div><div class="client-avatar">NA</div><div class="client-avatar">TA</div><div class="client-avatar">BS</div><div class="client-avatar">YM</div>
+        <div class="client-avatar">MF</div><div class="client-avatar">RK</div><div class="client-avatar">NA</div><div class="client-avatar">TA</div><div class="client-avatar">BS</div><div class="client-avatar">YM</div>
+      </div>
+    </div>
+    <div class="feedback-text fade-up" style="transition-delay:.15s">
+      <h2>Feedback Reflects My <span class="grad-head">Expertise</span></h2>
+      <div class="check-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="check-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><p><strong>Proven Results:</strong> Clients share how my web solutions helped them achieve real business growth and measurable success.</p></div>
+      <div class="check-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="check-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><p><strong>Effective Communication:</strong> Clear, consistent communication throughout every project from start to finish.</p></div>
+      <div class="check-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="check-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><p><strong>Client Satisfaction:</strong> My work reflects dedication to exceeding expectations through exceptional service.</p></div>
+      <div class="check-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="check-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><p><strong>Timely Completion:</strong> Clients appreciate my ability to meet deadlines while delivering high-quality work.</p></div>
+    </div>
+  </div>
+  <div class="written-reviews fade-up">
+    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Fahad built our Shopify store from scratch and delivered everything on time. The store looks professional and our conversion rate improved right away.</p><div class="review-divider"></div><div class="review-author"><div class="review-avatar">AK</div><div><div class="review-name">Ahmed Khan</div><div class="review-role">E-Commerce Business Owner</div></div></div></div>
+    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Great communication throughout. He redesigned our WordPress site and the results were exactly what we wanted. Will work with him again.</p><div class="review-divider"></div><div class="review-author"><div class="review-avatar">SR</div><div><div class="review-name">Sara Rashid</div><div class="review-role">Marketing Manager</div></div></div></div>
+    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Fahad handled our brand identity and social media graphics. Clean, modern work. He understood our vision and delivered beyond expectations.</p><div class="review-divider"></div><div class="review-author"><div class="review-avatar">OM</div><div><div class="review-name">Omar Malik</div><div class="review-role">Startup Founder</div></div></div></div>
+    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Fast turnaround and solid work. Our WooCommerce store was set up and running in less than a week. Very responsive and easy to work with.</p><div class="review-divider"></div><div class="review-author"><div class="review-avatar">FN</div><div><div class="review-name">Fatima Noor</div><div class="review-role">Online Retailer</div></div></div></div>
+    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">I needed a landing page quickly. Fahad delivered a clean, fast-loading page that looked great on mobile. Highly recommend.</p><div class="review-divider"></div><div class="review-author"><div class="review-avatar">ZA</div><div><div class="review-name">Zain Ahmed</div><div class="review-role">Product Manager</div></div></div></div>
+    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">The branding package Fahad created gave our company a completely fresh look. Professional, skilled, and reliable. Clients noticed immediately.</p><div class="review-divider"></div><div class="review-author"><div class="review-avatar">HB</div><div><div class="review-name">Hina Baig</div><div class="review-role">Business Owner</div></div></div></div>
+  </div>
+  <ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+</section>
+
+<!-- ABOUT -->
+<section id="section-about">
+  <div class="about-grid">
+    <div class="about-img-wrap fade-up">
+      <img src="profile.png" alt="Muhammad Fahad Ali"/>
+      <div class="about-stats">
+        <div class="about-stat"><div class="about-stat-num">5+</div><div class="about-stat-label">Years Experience</div></div>
+        <div class="about-stat"><div class="about-stat-num">200+</div><div class="about-stat-label">Projects Delivered</div></div>
+        <div class="about-stat"><div class="about-stat-num">150+</div><div class="about-stat-label">Happy Clients</div></div>
+        <div class="about-stat"><div class="about-stat-num">5.0</div><div class="about-stat-label">Average Rating</div></div>
+      </div>
+    </div>
+    <div class="about-text fade-up" style="transition-delay:.15s">
+      <p class="section-subtitle">Who I Am</p>
+      <h2>Hello, I'm <span class="grad-head">Muhammad Fahad Ali</span></h2>
+      <p>I'm a passionate Freelance Web Developer, Shopify Expert, and Graphic Designer focused on helping businesses grow, scale, and move to the next level through high-impact digital solutions. With 5+ years of experience, I approach every project with a results-driven, strategic mindset to deliver real business outcomes.</p>
+      <p>My priority on every project is to implement effective, growth-oriented solutions that elevate your brand and make your website stand out. I build digital experiences that not only look great but also perform, converting visitors into potential clients and driving measurable business success.</p>
+      <p>I specialize in WordPress and Shopify development while also working extensively on graphic design and brand identity. With strong problem-solving skills and a commitment to quality, I deliver custom business solutions tailored to your needs.</p>
+      <div style="margin-top:2rem"><a href="#section-contact" class="btn-primary btn-solid">Work With Me</a></div>
+    </div>
+  </div>
+  <div class="process-grid">
+    <div class="process-card fade-up"><div class="process-num">01</div><h4>Versatile Expertise</h4><p>From front-end design to back-end logic, I deliver integrated solutions covering WordPress, Shopify, custom HTML/CSS/JS, and graphic design.</p></div>
+    <div class="process-card fade-up" style="transition-delay:.1s"><div class="process-num">02</div><h4>Ongoing Support</h4><p>My services don't end at launch. I offer maintenance and support to keep your site updated, secure, and running smoothly long after delivery.</p></div>
+    <div class="process-card fade-up" style="transition-delay:.2s"><div class="process-num">03</div><h4>Strong Collaboration</h4><p>I work closely with you throughout the process, keeping communication clear and transparent so your vision is realized exactly as intended.</p></div>
+    <div class="process-card fade-up" style="transition-delay:.3s"><div class="process-num">04</div><h4>Quality &amp; Performance</h4><p>I write clean, maintainable code and follow best practices. Your website will be fast, reliable, and scalable as your business grows.</p></div>
+  </div>
+  <ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="section-certs">
+  <div class="section-header fade-up">
+    <p class="section-subtitle">Education &amp; Training</p>
+    <h2 class="section-title">Certifications &amp; <span class="grad-head">Learning</span></h2>
+  </div>
+  <div class="certs-grid fade-up">
+    <div class="cert-card"><div class="cert-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.109m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.075 1.125.105l1.68 4.605-2.37 7.08-3.932-11.685c.648-.03 1.229-.105 1.229-.105.582-.075.515-.93-.065-.899 0 0-1.756.135-2.881.135-.203 0-.44-.005-.691-.014C5.271 3.664 8.412 2.25 12 2.25c2.571 0 4.908.998 6.658 2.63-.043-.005-.087-.014-.133-.014-1.064 0-1.82.93-1.82 1.92 0 .9.513 1.65 1.064 2.55.42.719.899 1.648.899 2.985 0 .926-.354 2.009-.826 3.514l-1.086 3.63-3.94-11.729zM12 21.75c-1.024 0-2.012-.149-2.944-.43l3.129-9.09 3.204 8.775c.021.053.046.101.071.149-1.072.387-2.214.596-3.46.596M2.25 12c0-1.603.313-3.135.875-4.536l4.823 13.21C4.716 19.134 2.25 15.842 2.25 12M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0"/></svg></div><div class="cert-title">WordPress Development</div><div class="cert-platform">Coursera</div><div class="cert-year">Completed in 8 months</div></div>
+    <div class="cert-card"><div class="cert-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 5.9 17 7 17h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 23.43 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg></div><div class="cert-title">Shopify Store Development</div><div class="cert-platform">Shopify Academy</div><div class="cert-year">Official Shopify Certification</div></div>
+    <div class="cert-card"><div class="cert-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 9.4L7.55 4.23 6.5 6.04l8.95 5.17 1.05-1.81zM5 3.4L3.59 4.81 7.97 9.2 5 12H2v4h3l5 5v-6.73l4.25 2.45c-.65.51-1.39.91-2.22 1.11V20h2v-2.3c1.19-.34 2.27-.99 3.15-1.85L19.19 18 20.6 16.59 5 3.4zM11.97 3L9 6.4l1.5 1.5 3.47-4-2-2.9z"/></svg></div><div class="cert-title">Front-End Development</div><div class="cert-platform">Udemy</div><div class="cert-year">HTML, CSS, JavaScript</div></div>
+    <div class="cert-card"><div class="cert-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div><div class="cert-title">Digital Marketing &amp; SEO</div><div class="cert-platform">Google &amp; edX</div><div class="cert-year">SEO, Ads &amp; Analytics</div></div>
+    <div class="cert-card"><div class="cert-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1 1 0 0 0-1.41 0L9 12.25 11.75 15l8.96-8.96a1 1 0 0 0 0-1.41z"/></svg></div><div class="cert-title">Graphic Design Fundamentals</div><div class="cert-platform">Adobe &amp; Canva</div><div class="cert-year">Branding, UI &amp; Visual Design</div></div>
+    <div class="cert-card"><div class="cert-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 16H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v12z"/></svg></div><div class="cert-title">E-Commerce Strategy</div><div class="cert-platform">Udemy</div><div class="cert-year">Conversion &amp; Growth Optimization</div></div>
+  </div>
+  <ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+</section>
+
+<!-- SKILLS -->
+<section id="section-skills">
+  <div class="section-header fade-up">
+    <p class="section-subtitle">My Skills</p>
+    <h2 class="section-title">Let's Explore Popular <span class="grad-head">Skills &amp; Experience</span></h2>
+  </div>
+  <div class="skills-main">
+    <div class="skills-left fade-up">
+      <h2>Technical <span class="grad-head">Expertise</span></h2>
+      <p>I specialize in building high-performance websites and e-commerce stores with a strong focus on user experience and business results. With 5+ years of experience, I leverage the right tools to deliver seamless and impactful digital solutions.</p>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">WordPress Development</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0" data-width="90%"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">Shopify Development</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0" data-width="85%"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">HTML / CSS / JavaScript</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0" data-width="88%"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">Graphic Design</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0" data-width="82%"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span class="skill-name">E-Commerce &amp; SEO</span><span class="skill-pct">87%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0" data-width="87%"></div></div></div>
+      <div class="tech-tags">
+        <span class="tech-tag"><img src="https://cdn.simpleicons.org/wordpress/44c5e5" width="18" height="18" alt="WordPress"/> WordPress</span>
+        <span class="tech-tag"><img src="https://cdn.simpleicons.org/shopify/44c5e5" width="18" height="18" alt="Shopify"/> Shopify</span>
+        <span class="tech-tag"><img src="https://cdn.simpleicons.org/woocommerce/44c5e5" width="18" height="18" alt="WooCommerce"/> WooCommerce</span>
+        <span class="tech-tag"><img src="https://cdn.simpleicons.org/html5/44c5e5" width="18" height="18" alt="HTML5"/> HTML5</span>
+        <span class="tech-tag"><img src="https://cdn.simpleicons.org/css3/44c5e5" width="18" height="18" alt="CSS3"/> CSS3</span>
+        <span class="tech-tag"><img src="https://cdn.simpleicons.org/javascript/44c5e5" width="18" height="18" alt="JavaScript"/> JavaScript</span>
+        <span class="tech-tag"><img src="https://cdn.simpleicons.org/figma/44c5e5" width="18" height="18" alt="Figma"/> Figma</span>
+        <span class="tech-tag"><img src="https://cdn.simpleicons.org/adobephotoshop/44c5e5" width="18" height="18" alt="Photoshop"/> Photoshop</span>
+        <span class="tech-tag"><img src="https://cdn.simpleicons.org/adobeillustrator/44c5e5" width="18" height="18" alt="Illustrator"/> Illustrator</span>
+        <span class="tech-tag"><img src="https://cdn.simpleicons.org/google/44c5e5" width="18" height="18" alt="SEO"/> SEO</span>
+      </div>
+    </div>
+    <div class="fade-up" style="transition-delay:.15s">
+      <p class="section-subtitle">Why Choose Me</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem">Built for Real <span class="grad-head">Business Results</span></h2>
+      <p style="color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:1rem">Every project I take on is focused on delivering results that matter. I combine technical skills with a strong understanding of what makes websites convert visitors into customers.</p>
+      <p style="color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:2rem">Whether you need a WordPress site, a Shopify store, or a complete brand identity, I bring the same level of professionalism and attention to every job.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div style="border-left:2px solid var(--accent);padding-left:1rem"><div style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem">Delivery</div><div style="font-size:.85rem;color:var(--muted)">On time, every time</div></div>
+        <div style="border-left:2px solid var(--accent);padding-left:1rem"><div style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem">Support</div><div style="font-size:.85rem;color:var(--muted)">Post-launch assistance</div></div>
+        <div style="border-left:2px solid var(--accent);padding-left:1rem"><div style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem">Quality</div><div style="font-size:.85rem;color:var(--muted)">Clean, maintainable work</div></div>
+        <div style="border-left:2px solid var(--accent);padding-left:1rem"><div style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem">Communication</div><div style="font-size:.85rem;color:var(--muted)">Clear and transparent</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="section-services">
+  <div class="section-header fade-up">
+    <p class="section-subtitle">What I Do</p>
+    <h2 class="section-title">My <span class="grad-head">Services</span></h2>
+  </div>
+
+  <!-- SHOPIFY -->
+  <div class="service-category">
+    <div class="service-cat-header">
+      <div class="service-cat-img fade-up"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 5.9 17 7 17h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 23.43 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg><p>Shopify Development</p></div>
+      <div class="fade-up" style="transition-delay:.1s">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem"><span class="grad-head">Shopify Development</span></h2>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8">I create fully customized, high-performance Shopify stores tailored to your business. From store setup to custom app integration, I build stores that convert visitors into buyers. I provide advanced e-commerce features, streamlined checkout processes, and ongoing maintenance to keep your store running at its best.</p>
+      </div>
+    </div>
+    <div class="service-cards fade-up">
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 5.9 17 7 17h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 23.43 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg></div><h4>Store Build or Redesign</h4><p>New Shopify store or redesign of an existing one, from basic theme setup to fully custom solutions built around your brand.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1 1 0 0 0-1.41 0L9 12.25 11.75 15l8.96-8.96a1 1 0 0 0 0-1.41z"/></svg></div><h4>Theme Customization</h4><p>Custom pages and forms to personalize how customers discover and purchase your products.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 9.4L7.55 4.23 6.5 6.04l8.95 5.17 1.05-1.81zM5 3.4L3.59 4.81 7.97 9.2 5 12H2v4h3l5 5v-6.73l4.25 2.45c-.65.51-1.39.91-2.22 1.11V20h2v-2.3c1.19-.34 2.27-.99 3.15-1.85L19.19 18 20.6 16.59 5 3.4zM11.97 3L9 6.4l1.5 1.5 3.47-4-2-2.9z"/></svg></div><h4>Custom App Integrations</h4><p>Features that require custom code, a custom-built app, or connecting to other systems and third-party platforms.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></div><h4>Product &amp; Collection Setup</h4><p>Products with images and descriptions, including custom options like subscriptions and gift cards.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg></div><h4>Audit &amp; Optimization</h4><p>Comprehensive audit covering speed, UX, SEO, and conversion rate to improve your store's overall performance.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg></div><h4>Troubleshooting</h4><p>Resolve any errors or issues quickly so customers never hit a broken page or checkout problem.</p></div>
+    </div>
+  </div>
+
+  <!-- WORDPRESS -->
+  <div class="service-category">
+    <div class="service-cat-header" style="direction:rtl">
+      <div class="service-cat-img fade-up" style="direction:ltr"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.109m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.075 1.125.105l1.68 4.605-2.37 7.08-3.932-11.685c.648-.03 1.229-.105 1.229-.105.582-.075.515-.93-.065-.899 0 0-1.756.135-2.881.135-.203 0-.44-.005-.691-.014C5.271 3.664 8.412 2.25 12 2.25c2.571 0 4.908.998 6.658 2.63-.043-.005-.087-.014-.133-.014-1.064 0-1.82.93-1.82 1.92 0 .9.513 1.65 1.064 2.55.42.719.899 1.648.899 2.985 0 .926-.354 2.009-.826 3.514l-1.086 3.63-3.94-11.729zM12 21.75c-1.024 0-2.012-.149-2.944-.43l3.129-9.09 3.204 8.775c.021.053.046.101.071.149-1.072.387-2.214.596-3.46.596M2.25 12c0-1.603.313-3.135.875-4.536l4.823 13.21C4.716 19.134 2.25 15.842 2.25 12M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0"/></svg><p>WordPress Development</p></div>
+      <div class="fade-up" style="transition-delay:.1s;direction:ltr">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem"><span class="grad-head">WordPress Development</span></h2>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8">I build fast-loading, mobile-responsive WordPress websites with minimal plugins and clean code. Whether you need a new website, WooCommerce store, or ongoing maintenance, I provide reliable, professional WordPress solutions while prioritizing security through regular updates, malware scans, and performance optimization.</p>
+      </div>
+    </div>
+    <div class="service-cards fade-up">
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg></div><h4>Custom Website Development</h4><p>Fully custom WordPress website from scratch, tailored to your brand and business goals.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 16H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v12z"/></svg></div><h4>WooCommerce Development</h4><p>E-commerce websites including products, payment gateways, and full inventory management.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5s4.5 2.04 4.5 10.5c0 2.49-1.04 5.57-1.6 7H9.1c-.56-1.43-1.6-4.51-1.6-7C7.5 4.54 12 2.5 12 2.5zm2 8.5c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-6.31 9.52c-.17.34-.24.72-.19 1.09l.15 1.25c.09.71.69 1.24 1.4 1.24h5.9c.71 0 1.31-.53 1.4-1.24l.15-1.25c.05-.37-.02-.75-.19-1.09H7.69z"/></svg></div><h4>Landing Page Design</h4><p>High-converting landing pages for products, services, or campaigns optimized for all devices.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg></div><h4>Website Redesign</h4><p>Refresh an outdated website with a modern design and better performance without losing content.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div><h4>SEO Optimization</h4><p>On-page SEO, speed optimization, meta tags, and clean site structure for better search rankings.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div><h4>Maintenance &amp; Security</h4><p>Regular updates, security checks, backups, and support to keep your site running smoothly.</p></div>
+    </div>
+  </div>
+
+  <!-- GRAPHIC DESIGN -->
+  <div class="service-category">
+    <div class="service-cat-header">
+      <div class="service-cat-img fade-up"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1 1 0 0 0-1.41 0L9 12.25 11.75 15l8.96-8.96a1 1 0 0 0 0-1.41z"/></svg><p>Graphic Design</p></div>
+      <div class="fade-up" style="transition-delay:.1s">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem"><span class="grad-head">Graphic Design</span></h2>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8">Visual design that strengthens your brand and communicates clearly. From logo design to complete brand identity kits, I create visuals that make your business look professional and memorable. Every design is crafted to match your vision and resonate with your target audience.</p>
+      </div>
+    </div>
+    <div class="service-cards fade-up">
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div><h4>Logo Design</h4><p>A unique, memorable logo that represents your brand. Delivered in PNG, SVG, and PDF formats.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5L2 9l10 12L22 9l-3-6zm-7 14.5L4.5 9.5l2-4.5h11l2 4.5L12 17.5zm0-4.5l-4-5h8l-4 5z"/></svg></div><h4>Brand Identity</h4><p>Complete brand kit including logo, color palette, typography, and usage guidelines for consistency everywhere.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div><h4>Social Media Graphics</h4><p>Eye-catching posts, banners, and story templates for Instagram, Facebook, and LinkedIn.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div><h4>Marketing Materials</h4><p>Professional flyers, brochures, business cards, and banners for both print and digital use.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg></div><h4>UI Design</h4><p>Clean, user-friendly interfaces for websites and apps focused on usability and visual consistency.</p></div>
+      <div class="service-card"><div class="svc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></div><h4>Thumbnail &amp; Cover Design</h4><p>Scroll-stopping YouTube thumbnails, blog covers, and product images that drive more clicks.</p></div>
+    </div>
+  </div>
+  <ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="section-portfolio">
+  <div class="section-header fade-up">
+    <p class="section-subtitle">Project</p>
+    <h2 class="section-title">My <span class="grad-head">Portfolio</span></h2>
+    <p class="section-desc">Real work with measurable outcomes for real businesses.</p>
+  </div>
+  <div class="portfolio-grid fade-up">
+    <div class="p-item"><div class="p-num">01</div><div class="p-cat">Shopify</div><div class="p-title">Fashion E-Commerce Store</div><p class="p-desc">Built a full Shopify store with custom theme, product pages, and checkout flow for a clothing brand.</p><div class="p-tags"><span class="p-tag">+40% Sales</span><span class="p-tag">2x Conversion</span></div></div>
+    <div class="p-item"><div class="p-num">02</div><div class="p-cat">WordPress</div><div class="p-title">Corporate Business Website</div><p class="p-desc">Full corporate site with services pages, team section, and contact forms that tripled lead generation.</p><div class="p-tags"><span class="p-tag">3x More Leads</span><span class="p-tag">Mobile Optimized</span></div></div>
+    <div class="p-item"><div class="p-num">03</div><div class="p-cat">Graphic Design</div><div class="p-title">Complete Brand Identity</div><p class="p-desc">Full brand identity including logo, color palette, typography, and social media templates.</p><div class="p-tags"><span class="p-tag">Logo + Brand Kit</span><span class="p-tag">5 Star Rating</span></div></div>
+    <div class="p-item"><div class="p-num">04</div><div class="p-cat">WooCommerce</div><div class="p-title">Electronics Online Store</div><p class="p-desc">WooCommerce store with 200+ products, filters, payment integration, and order management.</p><div class="p-tags"><span class="p-tag">200+ Products</span><span class="p-tag">Fast Load Time</span></div></div>
+    <div class="p-item"><div class="p-num">05</div><div class="p-cat">Web Development</div><div class="p-title">Restaurant Landing Page</div><p class="p-desc">Custom HTML/CSS landing page with menu, reservations section, and Google Maps integration.</p><div class="p-tags"><span class="p-tag">+60% Bookings</span><span class="p-tag">SEO Optimized</span></div></div>
+    <div class="p-item"><div class="p-num">06</div><div class="p-cat">Shopify</div><div class="p-title">Health &amp; Wellness Store</div><p class="p-desc">Shopify store with subscription products, custom app integration, and automated email flows.</p><div class="p-tags"><span class="p-tag">Subscription Setup</span><span class="p-tag">+35% Retention</span></div></div>
+    <div class="p-item"><div class="p-num">07</div><div class="p-cat">Graphic Design</div><div class="p-title">Social Media Campaign</div><p class="p-desc">Complete social media design package for a retail brand including posts, stories, and banner ads.</p><div class="p-tags"><span class="p-tag">+80% Engagement</span><span class="p-tag">Brand Kit</span></div></div>
+    <div class="p-item"><div class="p-num">08</div><div class="p-cat">WordPress</div><div class="p-title">Real Estate Agency Site</div><p class="p-desc">WordPress site with property listings, search filters, contact forms, and Google Maps integration.</p><div class="p-tags"><span class="p-tag">Custom Listings</span><span class="p-tag">SEO Ready</span></div></div>
+    <div class="p-item"><div class="p-num">09</div><div class="p-cat">Shopify</div><div class="p-title">Jewellery Boutique Store</div><p class="p-desc">Custom Shopify store for a jewellery brand with product photography display and upsell flows.</p><div class="p-tags"><span class="p-tag">+50% AOV</span><span class="p-tag">Mobile First</span></div></div>
+  </div>
+</section>
+
+<!-- WHY WORK WITH ME -->
+<section id="section-why">
+  <div class="expertise-showcase fade-up">
+    <div class="expertise-content">
+      <h4>WHY YOU SHOULD WORK WITH ME</h4>
+      <h2 class="expertise-title">Transform Your Business with <span class="grad-head">My Expertise and Guidance</span></h2>
+      <img src="profile.png" alt="Muhammad Fahad Ali"/>
+    </div>
+    <div>
+      <div class="exp-detail">
+        <div class="exp-detail-left"><div class="exp-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1 1 0 0 0-1.41 0L9 12.25 11.75 15l8.96-8.96a1 1 0 0 0 0-1.41z"/></svg></div><div class="exp-line"></div></div>
+        <div><h3 class="exp-title">Design</h3><p class="exp-text">Every great website begins with a strategy. I create intuitive, user-friendly designs that align with your brand and ensure seamless customer engagement from the very first visit.</p></div>
+      </div>
+      <div class="exp-detail">
+        <div class="exp-detail-left"><div class="exp-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 9.4L7.55 4.23 6.5 6.04l8.95 5.17 1.05-1.81zM5 3.4L3.59 4.81 7.97 9.2 5 12H2v4h3l5 5v-6.73l4.25 2.45c-.65.51-1.39.91-2.22 1.11V20h2v-2.3c1.19-.34 2.27-.99 3.15-1.85L19.19 18 20.6 16.59 5 3.4zM11.97 3L9 6.4l1.5 1.5 3.47-4-2-2.9z"/></svg></div><div class="exp-line"></div></div>
+        <div><h3 class="exp-title">Develop</h3><p class="exp-text">Using modern technologies, I build responsive, scalable, and high-performance websites. Whether a custom-coded solution or a CMS platform, I deliver clean and reliable results every time.</p></div>
+      </div>
+      <div class="exp-detail">
+        <div class="exp-detail-left"><div class="exp-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5s4.5 2.04 4.5 10.5c0 2.49-1.04 5.57-1.6 7H9.1c-.56-1.43-1.6-4.51-1.6-7C7.5 4.54 12 2.5 12 2.5zm2 8.5c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-6.31 9.52c-.17.34-.24.72-.19 1.09l.15 1.25c.09.71.69 1.24 1.4 1.24h5.9c.71 0 1.31-.53 1.4-1.24l.15-1.25c.05-.37-.02-.75-.19-1.09H7.69z"/></svg></div><div class="exp-line" style="background:transparent"></div></div>
+        <div><h3 class="exp-title">Deliver</h3><p class="exp-text">From testing and deployment to post-launch support, I ensure a smooth transition to a fully operational website that drives results, growth, and long-term business success.</p></div>
+      </div>
+    </div>
+  </div>
+  <ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-cta" id="section-contact">
+  <div style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem">Get In Touch</div>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem">Ready to Elevate Your <span class="grad-head">Digital Presence?</span></h2>
+  <p><span>Collaborating with me</span> unlocks new opportunities for your business. With <span>proven experience, deep industry insight</span>, and a dedication to helping entrepreneurs succeed, I provide <span>expert guidance and innovative solutions</span> to deliver remarkable results.</p>
+  <div class="cta-headline">Ready to take your business to the next level?</div>
+  <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem">
+    <a href="mailto:Muhammadfahadali.020@gmail.com" class="btn-primary btn-solid"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>&nbsp;Email Me</a>
+    <a href="https://wa.me/923274411221" target="_blank" class="btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>&nbsp;WhatsApp</a>
+  </div>
+  <div class="social-cta">
+    <a href="https://www.linkedin.com/in/muhammadfahadali25" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+    <a href="https://www.facebook.com/share/1CqqhDvYSg/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    <a href="https://www.instagram.com/fahad_ali.61" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    <a href="https://github.com/mfa-muhammadfahadali" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+    <a href="mailto:Muhammadfahadali.020@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">FA.</div>
+  <span class="footer-copy">© 2026 Muhammad Fahad Ali. All rights reserved.</span>
+  <ul class="footer-links">
+    <li><a href="#section-about">About</a></li>
+    <li><a href="#section-services">Services</a></li>
+    <li><a href="#section-portfolio">Portfolio</a></li>
+    <li><a href="#section-testimonials">Testimonials</a></li>
+    <li><a href="#section-contact">Contact</a></li>
+  </ul>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div class="modal-overlay" id="videoModal" onclick="closeVideo()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeVideo()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+    <iframe id="videoIframe" width="100%" height="360" frameborder="0" allowfullscreen style="display:block;margin-top:1rem"></iframe>
+  </div>
+</div>
+
+<script>
+  // TYPING
+  const roles=['WordPress Developer','Shopify Expert','Graphic Designer','Web Developer'];
+  let ri=0,ci=0,del=false;
+  const tel=document.getElementById('typed-output');
+  function type(){
+    const cur=roles[ri];
+    if(!del){tel.textContent=cur.slice(0,ci+1);ci++;if(ci===cur.length){del=true;setTimeout(type,1800);return;}}
+    else{tel.textContent=cur.slice(0,ci-1);ci--;if(ci===0){del=false;ri=(ri+1)%roles.length;}}
+    setTimeout(type,del?55:95);
+  }
+  type();
+
+  // PARTICLES
+  (function(){
+    const canvas=document.createElement('canvas');
+    const pjs=document.getElementById('particles-js');
+    if(!pjs)return;
+    canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;';
+    pjs.appendChild(canvas);
+    const ctx=canvas.getContext('2d');
+    let W,H,pts=[];
+    function resize(){W=canvas.width=pjs.offsetWidth;H=canvas.height=pjs.offsetHeight;}
+    resize();window.addEventListener('resize',resize);
+    for(let i=0;i<60;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*1.5+.5});
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(68,197,229,.4)';ctx.fill();});
+      pts.forEach((a,i)=>{pts.slice(i+1).forEach(b=>{const d=Math.hypot(a.x-b.x,a.y-b.y);if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(68,197,229,${.15*(1-d/120)})`;ctx.lineWidth=.5;ctx.stroke();}});});
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  // FADE UP
+  const fo=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:.1});
+  document.querySelectorAll('.fade-up').forEach(el=>fo.observe(el));
+
+  // SKILL BARS
+  const so=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.querySelectorAll('.skill-fill').forEach(f=>{setTimeout(()=>{f.style.width=f.getAttribute('data-width');},200);});so.unobserve(x.target);}});},{threshold:.3});
+  const ss=document.querySelector('#section-skills');if(ss)so.observe(ss);
+
+  // VIDEO MODAL
+  function openVideo(url){document.getElementById('videoIframe').src=url;document.getElementById('videoModal').classList.add('active');}
+  function closeVideo(){document.getElementById('videoModal').classList.remove('active');document.getElementById('videoIframe').src='';}
+
+  // NAV
+  window.addEventListener('scroll',()=>{document.querySelector('header').style.background=window.scrollY>60?'rgba(6,6,16,.98)':'rgba(6,6,16,.92)';});
+</script>
+</body>
+</html>
