@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23080c0a'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Georgia%2Cserif'%20font-style='italic'%20font-size='30'%20text-anchor='middle'%20fill='%23b8975a'%3EFA%3C/text%3E%3C/svg%3E"/>
+<title>Muhammad Fahad Ali — Digital Craftsman</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#080c0a;
+  --ink2:#0d1410;
+  --ink3:#121a15;
+  --gold:#b8975a;
+  --gold2:#d4af6e;
+  --gold3:#e8cc8a;
+  --emerald:#1a4a2e;
+  --emerald2:#2d6b45;
+  --emerald3:#3d8a58;
+  --cream:#f0e8d8;
+  --cream2:#e8dcc8;
+  --muted:#6a7a70;
+  --border:rgba(184,151,90,0.2);
+  --border2:rgba(184,151,90,0.08);
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'Outfit',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* CUSTOM CURSOR */
+.cursor{
+  position:fixed;
+  width:8px;height:8px;
+  background:var(--gold);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transition:transform 0.1s;
+  mix-blend-mode:difference;
+}
+.cursor-ring{
+  position:fixed;
+  width:36px;height:36px;
+  border:1px solid rgba(184,151,90,0.5);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9998;
+  transition:all 0.15s ease;
+}
+
+/* NOISE TEXTURE OVERLAY */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:1;
+  opacity:0.4;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  padding:1.8rem 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  mix-blend-mode:normal;
+}
+nav::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:5%;right:5%;
+  height:1px;
+  background:var(--border);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--gold);
+  text-decoration:none;
+  letter-spacing:0.05em;
+  font-style:italic;
+}
+.nav-links{
+  display:flex;gap:3rem;list-style:none;
+}
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:0.72rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  transition:color 0.3s;
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-hire{
+  font-size:0.72rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--ink);
+  background:var(--gold);
+  padding:0.6rem 1.8rem;
+  text-decoration:none;
+  transition:all 0.3s;
+}
+.nav-hire:hover{background:var(--gold3)}
+
+/* HERO */
+#hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+  overflow:hidden;
+}
+.hero-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:10rem 5% 6rem;
+  position:relative;
+  z-index:2;
+}
+.hero-eyebrow{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:2rem;
+}
+.hero-eyebrow span{
+  font-size:0.68rem;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.hero-eyebrow-line{
+  width:40px;height:1px;
+  background:var(--gold);
+  opacity:0.5;
+}
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,6vw,6rem);
+  font-weight:300;
+  line-height:1.0;
+  margin-bottom:0.3rem;
+  color:var(--cream);
+}
+.hero-name em{
+  font-style:italic;
+  color:var(--gold);
+}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1rem,2vw,1.4rem);
+  font-weight:300;
+  font-style:italic;
+  color:var(--muted);
+  margin-bottom:2.5rem;
+  letter-spacing:0.05em;
+}
+.hero-desc{
+  font-size:0.88rem;
+  color:var(--muted);
+  line-height:1.9;
+  max-width:420px;
+  margin-bottom:3rem;
+  font-weight:300;
+}
+.hero-cta-wrap{
+  display:flex;
+  gap:1.5rem;
+  align-items:center;
+}
+.btn-gold{
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:0.9rem 2.5rem;
+  font-family:'Outfit',sans-serif;
+  font-size:0.72rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  text-decoration:none;
+  cursor:none;
+  transition:all 0.4s;
+  position:relative;
+  overflow:hidden;
+}
+.btn-gold::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:var(--gold);
+  transform:translateX(-100%);
+  transition:transform 0.4s ease;
+  z-index:-1;
+}
+.btn-gold:hover{color:var(--ink)}
+.btn-gold:hover::before{transform:translateX(0)}
+.btn-text{
+  font-size:0.72rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  transition:color 0.3s;
+}
+.btn-text:hover{color:var(--cream)}
+.btn-text::after{content:'→';transition:transform 0.3s}
+.btn-text:hover::after{transform:translateX(4px)}
+
+.hero-right{
+  position:relative;
+  overflow:hidden;
+}
+.hero-img-wrap{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+.hero-img-wrap{background:radial-gradient(ellipse at 50% 75%,rgba(184,151,90,0.22),transparent 62%)}
+.hero-img-wrap img{
+  width:85%;
+  max-width:420px;
+  height:auto;
+  object-fit:contain;
+  object-position:bottom;
+}
+.hero-img-overlay{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(to right, var(--ink) 0%, transparent 10%),
+             linear-gradient(to top, var(--ink) 0%, transparent 8%);
+}
+.hero-emerald-box{
+  position:absolute;
+  top:15%;right:8%;
+  width:200px;
+  border:1px solid var(--border);
+  padding:1.5rem;
+  background:rgba(26,74,46,0.15);
+  backdrop-filter:blur(10px);
+}
+.hero-emerald-box .stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;
+  font-weight:600;
+  color:var(--gold);
+  line-height:1;
+}
+.hero-emerald-box .stat-label{
+  font-size:0.65rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:0.3rem;
+}
+.hero-scroll{
+  position:absolute;
+  bottom:3rem;left:5%;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  font-size:0.65rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.scroll-line{
+  width:60px;height:1px;
+  background:var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.scroll-line::after{
+  content:'';
+  position:absolute;
+  top:0;left:-100%;
+  width:100%;height:100%;
+  background:var(--gold);
+  animation:scroll-anim 2s ease infinite;
+}
+@keyframes scroll-anim{
+  0%{left:-100%}100%{left:100%}
+}
+
+/* MARQUEE */
+.marquee-wrap{
+  background:var(--emerald);
+  border-top:1px solid rgba(184,151,90,0.3);
+  border-bottom:1px solid rgba(184,151,90,0.3);
+  padding:1rem 0;
+  overflow:hidden;
+}
+.marquee{
+  display:flex;
+  gap:4rem;
+  animation:marquee 20s linear infinite;
+  white-space:nowrap;
+}
+.marquee-item{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  font-style:italic;
+  color:var(--gold2);
+  letter-spacing:0.1em;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  gap:2rem;
+}
+.marquee-dot{
+  width:4px;height:4px;
+  border-radius:50%;
+  background:var(--gold);
+  opacity:0.5;
+}
+@keyframes marquee{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+/* ABOUT */
+#about{
+  padding:8rem 5%;
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:6rem;
+  align-items:center;
+  background:var(--ink2);
+  position:relative;
+}
+#about::before{
+  content:'';
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:3px;
+  background:linear-gradient(to bottom, transparent, var(--gold), transparent);
+}
+.about-label{
+  font-family:'Cormorant Garamond',serif;
+  font-size:8rem;
+  font-weight:700;
+  color:rgba(184,151,90,0.05);
+  line-height:1;
+  position:absolute;
+  left:5%;top:3rem;
+  pointer-events:none;
+  font-style:italic;
+}
+.about-left{position:relative;z-index:2}
+.section-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  font-size:0.65rem;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1.5rem;
+}
+.section-tag::before{
+  content:'';
+  width:20px;height:1px;
+  background:var(--gold);
+}
+.about-left h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,4vw,4rem);
+  font-weight:300;
+  line-height:1.1;
+  margin-bottom:2rem;
+  color:var(--cream);
+}
+.about-left h2 em{
+  font-style:italic;
+  color:var(--gold);
+}
+.about-grid-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--border);
+  margin-top:3rem;
+}
+.stat-box{
+  background:var(--ink2);
+  padding:1.5rem;
+  transition:background 0.3s;
+}
+.stat-box:hover{background:var(--ink3)}
+.stat-box-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.5rem;
+  font-weight:600;
+  color:var(--gold);
+  line-height:1;
+}
+.stat-box-label{
+  font-size:0.65rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:0.4rem;
+}
+.about-right p{
+  font-size:0.92rem;
+  color:var(--muted);
+  line-height:2;
+  margin-bottom:1.5rem;
+}
+.about-right p strong{color:var(--cream)}
+.about-qualities{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  margin-top:2.5rem;
+}
+.quality-item{
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  padding:1rem 1.5rem;
+  border:1px solid var(--border2);
+  transition:border-color 0.3s, background 0.3s;
+}
+.quality-item:hover{
+  border-color:var(--border);
+  background:rgba(184,151,90,0.03);
+}
+.quality-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;
+  font-weight:300;
+  color:rgba(184,151,90,0.3);
+  flex-shrink:0;
+  width:30px;
+}
+.quality-text h4{font-size:0.85rem;color:var(--cream);margin-bottom:0.2rem}
+.quality-text p{font-size:0.78rem;color:var(--muted);line-height:1.6}
+
+/* SERVICES */
+#services{
+  padding:8rem 5%;
+  background:var(--ink);
+  position:relative;
+  overflow:hidden;
+}
+.services-bg-text{
+  position:absolute;
+  right:-2%;top:50%;
+  transform:translateY(-50%) rotate(90deg);
+  font-family:'Cormorant Garamond',serif;
+  font-size:12rem;
+  font-weight:700;
+  color:rgba(184,151,90,0.03);
+  pointer-events:none;
+  white-space:nowrap;
+  font-style:italic;
+}
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:5rem;
+}
+.section-header h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,4vw,4rem);
+  font-weight:300;
+  line-height:1.1;
+  color:var(--cream);
+}
+.section-header h2 em{font-style:italic;color:var(--gold)}
+.section-header p{
+  font-size:0.82rem;
+  color:var(--muted);
+  max-width:300px;
+  line-height:1.8;
+  text-align:right;
+}
+.services-list{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.service-row{
+  display:grid;
+  grid-template-columns:80px 1fr 1fr auto;
+  gap:3rem;
+  align-items:center;
+  padding:2rem 0;
+  border-bottom:1px solid var(--border2);
+  transition:all 0.4s;
+  cursor:none;
+  position:relative;
+}
+.service-row::before{
+  content:'';
+  position:absolute;
+  left:0;bottom:0;
+  width:0;height:1px;
+  background:var(--gold);
+  transition:width 0.4s ease;
+}
+.service-row:hover::before{width:100%}
+.service-row:hover .service-num{color:var(--gold)}
+.service-row:hover .service-title{color:var(--gold2)}
+.service-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  color:var(--muted);
+  font-style:italic;
+  transition:color 0.3s;
+}
+.service-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;
+  font-weight:300;
+  color:var(--cream);
+  transition:color 0.3s;
+}
+.service-desc{
+  font-size:0.8rem;
+  color:var(--muted);
+  line-height:1.8;
+}
+.service-tags{
+  display:flex;
+  flex-direction:column;
+  gap:0.3rem;
+  align-items:flex-end;
+}
+.service-tag{
+  font-size:0.62rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--gold);
+  opacity:0.6;
+}
+
+/* SKILLS */
+#skills{
+  padding:8rem 5%;
+  background:var(--ink2);
+}
+.skills-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6rem;
+  align-items:start;
+}
+.skills-left h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,4vw,4rem);
+  font-weight:300;
+  line-height:1.1;
+  color:var(--cream);
+  margin-bottom:2rem;
+}
+.skills-left h2 em{font-style:italic;color:var(--gold)}
+.skills-left p{
+  font-size:0.85rem;
+  color:var(--muted);
+  line-height:1.9;
+  margin-bottom:3rem;
+}
+.skill-bars{display:flex;flex-direction:column;gap:2rem}
+.skill-bar-item{}
+.skill-bar-header{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:0.8rem;
+  font-size:0.78rem;
+}
+.skill-bar-name{color:var(--cream);letter-spacing:0.05em}
+.skill-bar-pct{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  color:var(--gold);
+}
+.skill-bar-track{
+  height:1px;
+  background:var(--border2);
+  position:relative;
+}
+.skill-bar-fill{
+  height:100%;
+  background:linear-gradient(90deg, var(--emerald3), var(--gold));
+  width:0;
+  transition:width 1.4s cubic-bezier(0.4,0,0.2,1);
+  position:relative;
+}
+.skill-bar-fill::after{
+  content:'';
+  position:absolute;
+  right:-4px;top:50%;
+  transform:translateY(-50%);
+  width:7px;height:7px;
+  background:var(--gold);
+  border-radius:50%;
+  box-shadow:0 0 8px var(--gold);
+}
+.skills-right{
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+  padding-top:5rem;
+}
+.tech-card{
+  border:1px solid var(--border2);
+  padding:1.5rem;
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  transition:all 0.3s;
+  position:relative;
+  overflow:hidden;
+}
+.tech-card::before{
+  content:'';
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:2px;
+  background:var(--gold);
+  transform:scaleY(0);
+  transition:transform 0.3s;
+}
+.tech-card:hover{
+  border-color:var(--border);
+  background:rgba(184,151,90,0.02);
+}
+.tech-card:hover::before{transform:scaleY(1)}
+.tech-icon{
+  width:40px;height:40px;
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.2rem;
+  flex-shrink:0;
+}
+.tech-card-name{font-size:0.85rem;color:var(--cream)}
+.tech-card-type{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
+
+.tech-icon img,.contact-link-icon img{width:24px;height:24px;display:block}
+.contact-link-icon img{opacity:.85;transition:opacity .3s}
+.contact-link:hover .contact-link-icon img{opacity:1}
+.tech-icon{color:var(--gold)}
+
+/* PORTFOLIO */
+#portfolio{
+  padding:8rem 5%;
+  background:var(--ink);
+}
+.portfolio-header{
+  margin-bottom:4rem;
+}
+.portfolio-header h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,4vw,4rem);
+  font-weight:300;
+  color:var(--cream);
+}
+.portfolio-header h2 em{font-style:italic;color:var(--gold)}
+.portfolio-masonry{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border2);
+}
+.p-card{
+  background:var(--ink);
+  padding:2.5rem;
+  position:relative;
+  overflow:hidden;
+  transition:background 0.4s;
+  min-height:280px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.p-card:hover{background:var(--ink3)}
+.p-card-num{
+  position:absolute;
+  top:1.5rem;right:1.5rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;
+  font-weight:700;
+  color:rgba(184,151,90,0.06);
+  line-height:1;
+  font-style:italic;
+}
+.p-card-cat{
+  font-size:0.62rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:0.6rem;
+  opacity:0.7;
+}
+.p-card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;
+  font-weight:400;
+  color:var(--cream);
+  margin-bottom:0.8rem;
+  line-height:1.2;
+}
+.p-card-desc{
+  font-size:0.78rem;
+  color:var(--muted);
+  line-height:1.7;
+  margin-bottom:1.2rem;
+}
+.p-card-result{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  font-size:0.68rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid var(--border);
+  padding:0.4rem 0.8rem;
+}
+.p-card-result::before{
+  content:'↑';
+  font-size:0.8rem;
+}
+
+/* TESTIMONIALS */
+#testimonials{
+  padding:8rem 5%;
+  background:var(--emerald);
+  position:relative;
+  overflow:hidden;
+}
+#testimonials::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8975a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.testimonials-inner{position:relative;z-index:2}
+.testimonials-inner h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,4vw,4rem);
+  font-weight:300;
+  color:var(--cream);
+  margin-bottom:4rem;
+}
+.testimonials-inner h2 em{font-style:italic;color:var(--gold)}
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(184,151,90,0.15);
+}
+.t-card{
+  background:rgba(26,74,46,0.6);
+  padding:2rem;
+  backdrop-filter:blur(10px);
+  transition:background 0.3s;
+}
+.t-card:hover{background:rgba(26,74,46,0.8)}
+.t-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;
+  color:var(--gold);
+  opacity:0.3;
+  line-height:1;
+  margin-bottom:0.5rem;
+}
+.t-stars{color:var(--gold);font-size:0.7rem;letter-spacing:3px;margin-bottom:1rem}
+.t-text{
+  font-size:0.85rem;
+  color:rgba(240,232,216,0.8);
+  line-height:1.8;
+  margin-bottom:1.5rem;
+  font-style:italic;
+}
+.t-divider{height:1px;background:rgba(184,151,90,0.2);margin-bottom:1.2rem}
+.t-author{display:flex;align-items:center;gap:0.8rem}
+.t-avatar{
+  width:36px;height:36px;
+  border-radius:50%;
+  background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.9rem;
+  font-weight:700;
+  color:var(--ink);
+}
+.t-name{font-size:0.82rem;color:var(--cream)}
+.t-role{font-size:0.68rem;letter-spacing:0.1em;color:rgba(184,151,90,0.7);text-transform:uppercase}
+
+/* WHY */
+#why{
+  padding:8rem 5%;
+  background:var(--ink2);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6rem;
+  align-items:center;
+}
+.why-left h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,4vw,4.5rem);
+  font-weight:300;
+  line-height:1.05;
+  color:var(--cream);
+  margin-bottom:2rem;
+}
+.why-left h2 em{font-style:italic;color:var(--gold)}
+.why-left p{
+  font-size:0.85rem;
+  color:var(--muted);
+  line-height:1.9;
+  margin-bottom:2.5rem;
+}
+.why-steps{display:flex;flex-direction:column;gap:0}
+.why-step{
+  display:flex;
+  gap:2rem;
+  padding:2rem 0;
+  border-bottom:1px solid var(--border2);
+  align-items:flex-start;
+  transition:all 0.3s;
+}
+.why-step:hover .why-step-num{color:var(--gold)}
+.why-step-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;
+  font-weight:300;
+  color:rgba(184,151,90,0.15);
+  line-height:1;
+  flex-shrink:0;
+  transition:color 0.3s;
+  width:60px;
+}
+.why-step-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;
+  font-weight:400;
+  color:var(--cream);
+  margin-bottom:0.5rem;
+}
+.why-step-desc{font-size:0.8rem;color:var(--muted);line-height:1.8}
+
+/* CONTACT */
+#contact{
+  padding:8rem 5%;
+  background:var(--ink);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.contact-bg-text{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(8rem,15vw,18rem);
+  font-weight:700;
+  color:rgba(184,151,90,0.03);
+  pointer-events:none;
+  white-space:nowrap;
+  font-style:italic;
+}
+.contact-inner{position:relative;z-index:2}
+.contact-inner h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,5vw,6rem);
+  font-weight:300;
+  line-height:1.1;
+  color:var(--cream);
+  margin-bottom:1.5rem;
+}
+.contact-inner h2 em{font-style:italic;color:var(--gold)}
+.contact-inner p{
+  font-size:0.88rem;
+  color:var(--muted);
+  max-width:500px;
+  margin:0 auto 3rem;
+  line-height:1.9;
+}
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  margin-bottom:4rem;
+  flex-wrap:wrap;
+}
+.contact-link{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.5rem;
+  text-decoration:none;
+  transition:transform 0.3s;
+}
+.contact-link:hover{transform:translateY(-4px)}
+.contact-link-icon{
+  width:54px;height:54px;
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.2rem;
+  transition:border-color 0.3s, background 0.3s;
+  color:var(--muted);
+}
+.contact-link:hover .contact-link-icon{
+  border-color:var(--gold);
+  background:rgba(184,151,90,0.05);
+  color:var(--gold);
+}
+.contact-link-label{
+  font-size:0.62rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.contact-email{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.2rem,2.5vw,2rem);
+  font-style:italic;
+  color:var(--gold);
+  text-decoration:none;
+  border-bottom:1px solid var(--border);
+  padding-bottom:0.3rem;
+  transition:border-color 0.3s;
+}
+.contact-email:hover{border-color:var(--gold)}
+
+/* FOOTER */
+footer{
+  background:var(--ink2);
+  border-top:1px solid var(--border);
+  padding:2rem 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+.footer-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--gold);
+  font-style:italic;
+}
+.footer-copy{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em}
+.footer-nav{display:flex;gap:2rem;list-style:none}
+.footer-nav a{
+  font-size:0.65rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color 0.3s;
+}
+.footer-nav a:hover{color:var(--gold)}
+
+/* ANIMATIONS */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  #hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  #about, #why{grid-template-columns:1fr}
+  .section-header{flex-direction:column;align-items:flex-start;gap:1rem}
+  .section-header p{text-align:left}
+  .service-row{grid-template-columns:60px 1fr;gap:1rem}
+  .service-desc,.service-tags{display:none}
+  .skills-grid{grid-template-columns:1fr}
+  .portfolio-masonry,.testimonials-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .about-label{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Fahad Ali.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:Muhammadfahadali.020@gmail.com" class="nav-hire">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      <span>Digital Craftsman — Est. 2019</span>
+    </div>
+    <h1 class="hero-name">
+      Muhammad<br>
+      <em>Fahad</em> Ali
+    </h1>
+    <p class="hero-title">WordPress · Shopify · Graphic Design</p>
+    <p class="hero-desc">
+      I craft high-performance digital experiences for businesses that want to grow. From a single landing page to a complete e-commerce store, every project is built with precision and purpose.
+    </p>
+    <div class="hero-cta-wrap">
+      <a href="#portfolio" class="btn-gold">View My Work</a>
+      <a href="#contact" class="btn-text">Start a Project</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <img src="profile.png?v=2" alt="Muhammad Fahad Ali" width="740" height="748">
+      <div class="hero-img-overlay"></div>
+    </div>
+    <div class="hero-emerald-box">
+      <div class="stat-num">150+</div>
+      <div class="stat-label">Satisfied Clients</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <div class="marquee-item">WordPress Development<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Shopify Expert<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Brand Identity<span class="marquee-dot"></span></div>
+    <div class="marquee-item">E-Commerce Solutions<span class="marquee-dot"></span></div>
+    <div class="marquee-item">UI Design<span class="marquee-dot"></span></div>
+    <div class="marquee-item">SEO Optimization<span class="marquee-dot"></span></div>
+    <div class="marquee-item">WooCommerce<span class="marquee-dot"></span></div>
+    <div class="marquee-item">WordPress Development<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Shopify Expert<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Brand Identity<span class="marquee-dot"></span></div>
+    <div class="marquee-item">E-Commerce Solutions<span class="marquee-dot"></span></div>
+    <div class="marquee-item">UI Design<span class="marquee-dot"></span></div>
+    <div class="marquee-item">SEO Optimization<span class="marquee-dot"></span></div>
+    <div class="marquee-item">WooCommerce<span class="marquee-dot"></span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-label">About</div>
+  <div class="about-left reveal">
+    <span class="section-tag">Who I Am</span>
+    <h2>A Freelancer<br>Who <em>Delivers</em><br>Real Results</h2>
+    <div class="about-grid-stats">
+      <div class="stat-box"><div class="stat-box-num">5+</div><div class="stat-box-label">Years Experience</div></div>
+      <div class="stat-box"><div class="stat-box-num">200+</div><div class="stat-box-label">Projects Done</div></div>
+      <div class="stat-box"><div class="stat-box-num">150+</div><div class="stat-box-label">Happy Clients</div></div>
+      <div class="stat-box"><div class="stat-box-num">5.0</div><div class="stat-box-label">Avg Rating</div></div>
+    </div>
+  </div>
+  <div class="about-right reveal">
+    <p>I'm <strong>Muhammad Fahad Ali</strong>, a passionate freelance web developer, Shopify expert, and graphic designer. With 5+ years of experience, I help businesses build powerful digital presences that drive real growth.</p>
+    <p>My approach is simple: understand your goals, build with precision, and deliver on time. I work across the full spectrum — from concept and design to development and launch — so you get a cohesive result without the complexity of managing multiple freelancers.</p>
+    <p>Based in <strong>Pakistan</strong>, I serve clients locally and internationally, delivering the same level of quality and commitment to every project regardless of size.</p>
+    <div class="about-qualities">
+      <div class="quality-item">
+        <div class="quality-num">01</div>
+        <div class="quality-text"><h4>Precision Execution</h4><p>Clean code, pixel-perfect design, and attention to every detail.</p></div>
+      </div>
+      <div class="quality-item">
+        <div class="quality-num">02</div>
+        <div class="quality-text"><h4>On-Time Delivery</h4><p>Deadlines are commitments, not suggestions. Always delivered on schedule.</p></div>
+      </div>
+      <div class="quality-item">
+        <div class="quality-num">03</div>
+        <div class="quality-text"><h4>Post-Launch Support</h4><p>My relationship with clients doesn't end at launch. I'm always available.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-bg-text">Services</div>
+  <div class="section-header reveal">
+    <h2>What I<br><em>Offer</em></h2>
+    <p>Three core disciplines where I bring technical excellence and creative thinking together.</p>
+  </div>
+  <div class="services-list">
+    <div class="service-row reveal">
+      <div class="service-num">01.</div>
+      <div class="service-title">Shopify Development</div>
+      <div class="service-desc">Custom stores built to convert. Theme customization, app integrations, product setup, audit & optimization, and full troubleshooting support.</div>
+      <div class="service-tags">
+        <span class="service-tag">Store Build</span>
+        <span class="service-tag">Theme Custom</span>
+        <span class="service-tag">App Integration</span>
+      </div>
+    </div>
+    <div class="service-row reveal">
+      <div class="service-num">02.</div>
+      <div class="service-title">WordPress Development</div>
+      <div class="service-desc">Fast, mobile-first WordPress websites. Custom themes, WooCommerce stores, landing pages, SEO, security, and ongoing maintenance.</div>
+      <div class="service-tags">
+        <span class="service-tag">WooCommerce</span>
+        <span class="service-tag">Custom Theme</span>
+        <span class="service-tag">SEO</span>
+      </div>
+    </div>
+    <div class="service-row reveal">
+      <div class="service-num">03.</div>
+      <div class="service-title">Graphic Design</div>
+      <div class="service-desc">Visual identities that make businesses memorable. Logo design, brand kits, social media graphics, marketing materials, and UI design.</div>
+      <div class="service-tags">
+        <span class="service-tag">Logo Design</span>
+        <span class="service-tag">Brand Kit</span>
+        <span class="service-tag">UI Design</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-grid">
+    <div class="skills-left reveal">
+      <span class="section-tag">Expertise</span>
+      <h2>Technical<br><em>Skills</em></h2>
+      <p>Five years of focused practice across web development, e-commerce, and design has given me a deep, practical skillset that covers the full digital product lifecycle.</p>
+      <div class="skill-bars">
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-name">WordPress Development</span><span class="skill-bar-pct">90%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-name">Shopify Development</span><span class="skill-bar-pct">85%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-name">HTML / CSS / JavaScript</span><span class="skill-bar-pct">88%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-name">Graphic Design</span><span class="skill-bar-pct">82%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-name">E-Commerce & SEO</span><span class="skill-bar-pct">87%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="87%"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="skills-right reveal">
+      <div class="tech-card"><div class="tech-icon"><img src="icon-wordpress.png" alt="" width="24" height="24"></div><div><div class="tech-card-name">WordPress & WooCommerce</div><div class="tech-card-type">CMS Development</div></div></div>
+      <div class="tech-card"><div class="tech-icon"><img src="icon-shopify.png" alt="" width="24" height="24"></div><div><div class="tech-card-name">Shopify</div><div class="tech-card-type">E-Commerce Platform</div></div></div>
+      <div class="tech-card"><div class="tech-icon"><img src="icon-code.png" alt="" width="24" height="24"></div><div><div class="tech-card-name">HTML5 / CSS3 / JavaScript</div><div class="tech-card-type">Frontend Development</div></div></div>
+      <div class="tech-card"><div class="tech-icon"><img src="icon-figma.png" alt="" width="24" height="24"></div><div><div class="tech-card-name">Figma & Adobe Suite</div><div class="tech-card-type">Design Tools</div></div></div>
+      <div class="tech-card"><div class="tech-icon"><img src="icon-analytics.png" alt="" width="24" height="24"></div><div><div class="tech-card-name">SEO & Analytics</div><div class="tech-card-type">Growth Optimization</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="portfolio-header reveal">
+    <span class="section-tag">My Work</span>
+    <h2>Selected <em>Projects</em></h2>
+  </div>
+  <div class="portfolio-masonry reveal">
+    <div class="p-card">
+      <div class="p-card-num">01</div>
+      <div class="p-card-cat">Shopify</div>
+      <div class="p-card-title">Fashion E-Commerce Store</div>
+      <div class="p-card-desc">Full Shopify store with custom theme, product pages, and optimized checkout flow.</div>
+      <div class="p-card-result">40% Sales Increase</div>
+    </div>
+    <div class="p-card">
+      <div class="p-card-num">02</div>
+      <div class="p-card-cat">WordPress</div>
+      <div class="p-card-title">Corporate Business Website</div>
+      <div class="p-card-desc">Professional site with services, team, and contact sections designed to convert.</div>
+      <div class="p-card-result">3x More Leads</div>
+    </div>
+    <div class="p-card">
+      <div class="p-card-num">03</div>
+      <div class="p-card-cat">Graphic Design</div>
+      <div class="p-card-title">Complete Brand Identity</div>
+      <div class="p-card-desc">Logo, color palette, typography and full brand guidelines for a growing brand.</div>
+      <div class="p-card-result">5 Star Rating</div>
+    </div>
+    <div class="p-card">
+      <div class="p-card-num">04</div>
+      <div class="p-card-cat">WooCommerce</div>
+      <div class="p-card-title">Electronics Online Store</div>
+      <div class="p-card-desc">200+ product WooCommerce store with filters, payments, and order management.</div>
+      <div class="p-card-result">Fast Load Time</div>
+    </div>
+    <div class="p-card">
+      <div class="p-card-num">05</div>
+      <div class="p-card-cat">Web Development</div>
+      <div class="p-card-title">Restaurant Landing Page</div>
+      <div class="p-card-desc">Custom HTML/CSS page with menu, reservations, and Maps integration.</div>
+      <div class="p-card-result">60% More Bookings</div>
+    </div>
+    <div class="p-card">
+      <div class="p-card-num">06</div>
+      <div class="p-card-cat">Shopify</div>
+      <div class="p-card-title">Health & Wellness Store</div>
+      <div class="p-card-desc">Subscription products, custom app integration, and automated email flows.</div>
+      <div class="p-card-result">35% More Retention</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testimonials-inner">
+    <div class="reveal">
+      <span class="section-tag" style="color:var(--gold2)">Client Reviews</span>
+      <h2>What Clients <em>Say</em></h2>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="t-card"><div class="t-quote">"</div><div class="t-stars">★★★★★</div><p class="t-text">Fahad built our Shopify store from scratch and delivered on time. Conversion rate improved immediately after launch.</p><div class="t-divider"></div><div class="t-author"><div class="t-avatar">AK</div><div><div class="t-name">Ahmed Khan</div><div class="t-role">E-Commerce Owner</div></div></div></div>
+      <div class="t-card"><div class="t-quote">"</div><div class="t-stars">★★★★★</div><p class="t-text">Great communication. He redesigned our WordPress site and the results were exactly what we needed. Will work again.</p><div class="t-divider"></div><div class="t-author"><div class="t-avatar">SR</div><div><div class="t-name">Sara Rashid</div><div class="t-role">Marketing Manager</div></div></div></div>
+      <div class="t-card"><div class="t-quote">"</div><div class="t-stars">★★★★★</div><p class="t-text">Handled our brand identity from start to finish. Clean, modern work that truly understood our vision.</p><div class="t-divider"></div><div class="t-author"><div class="t-avatar">OM</div><div><div class="t-name">Omar Malik</div><div class="t-role">Startup Founder</div></div></div></div>
+      <div class="t-card"><div class="t-quote">"</div><div class="t-stars">★★★★★</div><p class="t-text">WooCommerce store was up and running in less than a week. Very responsive and professional throughout.</p><div class="t-divider"></div><div class="t-author"><div class="t-avatar">FN</div><div><div class="t-name">Fatima Noor</div><div class="t-role">Online Retailer</div></div></div></div>
+      <div class="t-card"><div class="t-quote">"</div><div class="t-stars">★★★★★</div><p class="t-text">Delivered a fast, mobile-optimized landing page exactly when promised. Highly recommend his work.</p><div class="t-divider"></div><div class="t-author"><div class="t-avatar">ZA</div><div><div class="t-name">Zain Ahmed</div><div class="t-role">Product Manager</div></div></div></div>
+      <div class="t-card"><div class="t-quote">"</div><div class="t-stars">★★★★★</div><p class="t-text">The branding package gave our company a completely fresh look. Clients noticed the difference immediately.</p><div class="t-divider"></div><div class="t-author"><div class="t-avatar">HB</div><div><div class="t-name">Hina Baig</div><div class="t-role">Business Owner</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="why-left reveal">
+    <span class="section-tag">Why Choose Me</span>
+    <h2>Design.<br><em>Develop.</em><br>Deliver.</h2>
+    <p>I believe great digital work is built on three pillars: thoughtful design, solid development, and reliable delivery. Every project I take on follows this philosophy from day one to launch.</p>
+    <a href="#contact" class="btn-gold" style="display:inline-block;margin-top:1rem">Start a Project</a>
+  </div>
+  <div class="why-steps reveal">
+    <div class="why-step">
+      <div class="why-step-num">01</div>
+      <div>
+        <div class="why-step-title">Design</div>
+        <div class="why-step-desc">Every project starts with strategy. I create user-friendly designs that align with your brand and keep visitors engaged from the first second.</div>
+      </div>
+    </div>
+    <div class="why-step">
+      <div class="why-step-num">02</div>
+      <div>
+        <div class="why-step-title">Develop</div>
+        <div class="why-step-desc">Clean, performant, and scalable code. Whether WordPress, Shopify, or custom HTML, I build it right the first time.</div>
+      </div>
+    </div>
+    <div class="why-step">
+      <div class="why-step-num">03</div>
+      <div>
+        <div class="why-step-title">Deliver</div>
+        <div class="why-step-desc">From testing to deployment and post-launch support, I ensure a smooth handover and I'm always available when you need me.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-bg-text">Contact</div>
+  <div class="contact-inner reveal">
+    <span class="section-tag" style="justify-content:center">Get In Touch</span>
+    <h2>Let's Build<br>Something <em>Great</em></h2>
+    <p>Have a project in mind? I'd love to hear about it. Send me a message and I'll get back to you within 24 hours.</p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/muhammadfahadali25" target="_blank" class="contact-link">
+        <div class="contact-link-icon"><img src="icon-linkedin.png" alt="" width="24" height="24"></div>
+        <span class="contact-link-label">LinkedIn</span>
+      </a>
+      <a href="https://www.facebook.com/share/1CqqhDvYSg/" target="_blank" class="contact-link">
+        <div class="contact-link-icon"><img src="icon-facebook.png" alt="" width="24" height="24"></div>
+        <span class="contact-link-label">Facebook</span>
+      </a>
+      <a href="https://www.instagram.com/fahad_ali.61" target="_blank" class="contact-link">
+        <div class="contact-link-icon"><img src="icon-instagram.png" alt="" width="24" height="24"></div>
+        <span class="contact-link-label">Instagram</span>
+      </a>
+      <a href="https://github.com/mfa-muhammadfahadali" target="_blank" class="contact-link">
+        <div class="contact-link-icon"><img src="icon-github.png" alt="" width="24" height="24"></div>
+        <span class="contact-link-label">GitHub</span>
+      </a>
+      <a href="https://wa.me/923274411221" target="_blank" class="contact-link">
+        <div class="contact-link-icon"><img src="icon-whatsapp.png" alt="" width="24" height="24"></div>
+        <span class="contact-link-label">WhatsApp</span>
+      </a>
+    </div>
+    <a href="mailto:Muhammadfahadali.020@gmail.com" class="contact-email">Muhammadfahadali.020@gmail.com</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Fahad Ali.</div>
+  <span class="footer-copy">© 2026 Muhammad Fahad Ali — All Rights Reserved</span>
+  <ul class="footer-nav">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+// CUSTOM CURSOR
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cursor.style.left=mx-4+'px';
+  cursor.style.top=my-4+'px';
+});
+function animRing(){
+  rx+=(mx-rx)*0.12;
+  ry+=(my-ry)*0.12;
+  ring.style.left=rx-18+'px';
+  ring.style.top=ry-18+'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.transform='scale(1.8)';cursor.style.transform='scale(0.5)';});
+  el.addEventListener('mouseleave',()=>{ring.style.transform='scale(1)';cursor.style.transform='scale(1)';});
+});
+
+// REVEAL ON SCROLL
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// SKILL BARS
+const so=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.skill-bar-fill').forEach(f=>{
+        setTimeout(()=>{f.style.width=f.getAttribute('data-width');},300);
+      });
+      so.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+const skillsSec=document.querySelector('#skills');
+if(skillsSec)so.observe(skillsSec);
+
+// NAV SCROLL
+window.addEventListener('scroll',()=>{
+  const n=document.querySelector('nav');
+  n.style.background=window.scrollY>80?'rgba(8,12,10,0.97)':'transparent';
+});
+</script>
+</body>
+</html>
